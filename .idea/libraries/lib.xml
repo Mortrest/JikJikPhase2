@@ -2,6 +2,7 @@
   <library name="lib">
     <CLASSES>
       <root url="file://$USER_HOME$/JetBrains/javafx-sdk-11.0.2/lib" />
+      <root url="jar://$PROJECT_DIR$/../../Phase2/gson-2.8.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

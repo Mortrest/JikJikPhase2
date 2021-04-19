@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
@@ -47,9 +48,9 @@
                      </fill></Circle>
                </children>
             </Pane>
-            <Pane layoutY="174.0" prefHeight="501.0" prefWidth="858.0" style="-fx-background-color: #FFFFFF;">
+            <Pane layoutY="174.0" prefHeight="495.0" prefWidth="858.0" style="-fx-background-color: #FFFFFF;">
                <children>
-                  <Pane fx:id="TweetPane" layoutX="14.0" layoutY="28.0" prefHeight="124.0" prefWidth="838.0" style="-fx-background-color: #1DA3F3;">
+                  <Pane fx:id="TweetPane" layoutX="14.0" layoutY="14.0" prefHeight="124.0" prefWidth="838.0" style="-fx-background-color: #1DA3F3;">
                      <children>
                         <Circle fill="#4f769a" layoutX="80.0" layoutY="75.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
                         <TextArea editable="false" focusTraversable="false" layoutX="148.0" layoutY="46.0" prefHeight="48.0" prefWidth="609.0" text="What a night it was">
@@ -63,8 +64,11 @@
                            </font>
                         </TextField>
                      </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </Pane>
-                  <Pane fx:id="TweetPane1" layoutX="14.0" layoutY="177.0" prefHeight="124.0" prefWidth="838.0" style="-fx-background-color: #1DA3F3;">
+                  <Pane fx:id="TweetPane1" layoutX="14.0" layoutY="155.0" prefHeight="124.0" prefWidth="838.0" style="-fx-background-color: #1DA3F3;">
                      <children>
                         <Circle fill="#4f769a" layoutX="80.0" layoutY="75.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
                         <TextArea editable="false" focusTraversable="false" layoutX="148.0" layoutY="46.0" prefHeight="48.0" prefWidth="609.0" text="What a night it was">
@@ -78,38 +82,15 @@
                            </font>
                         </TextField>
                      </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </Pane>
-                  <Pane fx:id="TweetPane11" layoutX="14.0" layoutY="323.0" prefHeight="124.0" prefWidth="838.0" style="-fx-background-color: #1DA3F3;">
-                     <children>
-                        <Circle fill="#4f769a" layoutX="80.0" layoutY="75.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-                        <TextArea editable="false" focusTraversable="false" layoutX="148.0" layoutY="46.0" prefHeight="48.0" prefWidth="609.0" text="What a night it was">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </TextArea>
-                        <TextField editable="false" focusTraversable="false" layoutX="148.0" layoutY="14.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #1DA3F3;" text="Ali Falahati - @ALI - 9min ago">
-                           <font>
-                              <Font name="System Italic" size="13.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="TweetPane111" layoutX="10.0" layoutY="458.0" prefHeight="124.0" prefWidth="838.0" style="-fx-background-color: #1DA3F3;">
-                     <children>
-                        <Circle fill="#4f769a" layoutX="80.0" layoutY="75.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-                        <TextArea editable="false" focusTraversable="false" layoutX="148.0" layoutY="46.0" prefHeight="48.0" prefWidth="609.0" text="What a night it was">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </TextArea>
-                        <TextField editable="false" focusTraversable="false" layoutX="148.0" layoutY="14.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #1DA3F3;" text="Ali Falahati - @ALI - 9min ago">
-                           <font>
-                              <Font name="System Italic" size="13.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </Pane>
-               </children></Pane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
          </children></Pane>
 
    </children>
