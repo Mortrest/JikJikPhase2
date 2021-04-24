@@ -1,0 +1,5 @@
+#chatPane{
+    -fx-background-image: url("wallpaper.jpg");
+    -fx-background-size: 856 494;
+        -fx-background-repeat: stretch;
+}
