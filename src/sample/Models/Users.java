@@ -10,6 +10,19 @@ public class Users {
     static Chats chats;
     static Notifs notifs;
 
+
+    static User currentUser;
+    static ModelLoader ml;
+
+    // Constructor
+    public Users(ModelLoader modelLoader, Tweets tweets,Chats chats,Notifs notifs){
+        users = modelLoader.loadUsers();
+        ml = modelLoader;
+        Users.tweets = tweets;
+        Users.chats = chats;
+        Users.notifs = notifs;
+    }
+
     public static User getCurrentUser() {
         return currentUser;
     }
@@ -18,17 +31,6 @@ public class Users {
         Users.currentUser = currentUser;
     }
 
-    static User currentUser;
-    ModelLoader ml;
-
-    // Constructor
-    public Users(ModelLoader modelLoader, Tweets tweets,Chats chats,Notifs notifs){
-        users = modelLoader.loadUsers();
-        this.ml = modelLoader;
-        Users.tweets = tweets;
-        Users.chats = chats;
-        Users.notifs = notifs;
-    }
 
     public static Chats getChats(){
         return chats;
@@ -159,7 +161,7 @@ public class Users {
         return null;
     }
 
-    public void deleteProfile(User user){
+    public static void deleteProfile(User user){
         for (String us : user.getFollowers()){
             searchUsername(us).getFollowing().remove(user.getUsername());
         }
@@ -179,6 +181,11 @@ public class Users {
         ml.log("Users-"+user.getUsername() + " Profile deleted");
     }
 
+
+    public static void deactivate(User user){
+        user.setActive(false);
+        ml.saveUser(users);
+    }
     // Making tweet
     public void makeTweet(User userf,String textf){
         tweets.makeTweet(textf,"0",userf.getUsername(),userf.getFollowers());

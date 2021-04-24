@@ -15,6 +15,7 @@ import sample.Models.*;
 import java.io.IOException;
 
 public class LogInController {
+    public AnchorPane settingsPage;
     @FXML
     private AnchorPane homePage, explorePage, chatPage, currentPage, notifPage, eachChat,eachTweet;
     @FXML
@@ -86,6 +87,12 @@ public class LogInController {
         currentPage.setVisible(false);
         notifPage.setVisible(true);
         currentPage = notifPage;
+    }
+
+    public void setSettingsPage(){
+        currentPage.setVisible(false);
+        settingsPage.setVisible(true);
+        currentPage = settingsPage;
     }
 
 //    public void setEachChat(){
