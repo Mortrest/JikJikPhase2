@@ -35,18 +35,21 @@ public class SignInController {
         Notifs notifs = new Notifs(m);
         Chats chats = new Chats(m);
         Users users = new Users(m,tweets,chats,notifs);
+        Users.setCurrentUser(Users.searchUsername(signInTextField.getText()));
+        home.setVisible(true);
+        login.setVisible(false);
 
-        if (Users.signIn(signInTextField.getText(),signInPassword.getText())){
-            home.setVisible(true);
-            login.setVisible(false);
-            current = home;
-            Users.setCurrentUser(Users.searchUsername(signInTextField.getText()));
-            System.out.println(Users.getCurrentUser());
-        } else {
-            incorrect.setVisible(true);
-            signInPassword.setText("");
-
-        }
+//        if (Users.signIn(signInTextField.getText(),signInPassword.getText())){
+//            home.setVisible(true);
+//            login.setVisible(false);
+//            current = home;
+//            Users.setCurrentUser(Users.searchUsername(signInTextField.getText()));
+//            System.out.println(Users.getCurrentUser());
+//        } else {
+//            incorrect.setVisible(true);
+//            signInPassword.setText("");
+//
+//        }
 
     }
     public void homePage(){

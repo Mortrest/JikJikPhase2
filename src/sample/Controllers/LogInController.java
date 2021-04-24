@@ -1,4 +1,5 @@
 package sample.Controllers;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,11 +11,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sample.Models.*;
+
 import java.io.IOException;
 
 public class LogInController {
     @FXML
-    private AnchorPane homePage,explorePage,chatPage,currentPage;
+    private AnchorPane homePage, explorePage, chatPage, currentPage, notifPage, eachChat,eachTweet;
     @FXML
     private PasswordField signInPassword;
     @FXML
@@ -22,28 +24,46 @@ public class LogInController {
     @FXML
     private Label incorrect;
     @FXML
-    private Button signInBtn,btnT1;
+    private Button signInBtn, btnT1;
 
 
-    public void initialize(){
-        currentPage = homePage;
+    public void initialize() {
+        if (Tweets.getTweetID() != null){
+            currentPage = eachTweet;
+            eachTweet.setVisible(true);
+        }
+
+
+        if (Chats.getRoomID() != null){
+            currentPage = chatPage;
+            chatPage.setVisible(true);
+            System.out.println("no");
+        } else {
+            currentPage = homePage;
+        }
     }
 
 
     public void SignIn() throws IOException {
-        if (signInPassword.getText().equals("1")){
-            Users.setCurrentUser(Users.searchUsername(signInTextField.getText()));
-            Parent root = FXMLLoader.load(getClass().getResource("../FXML/sample.fxml"));
-            Stage window = (Stage) signInBtn.getScene().getWindow();
-            window.setScene(new Scene(root,1069, 673));
+        Users.setCurrentUser(Users.searchUsername("morty"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/sample.fxml"));
+        Stage window = (Stage) signInBtn.getScene().getWindow();
+        window.setScene(new Scene(root));
 
-        } else {
-            incorrect.setVisible(true);
-            signInPassword.setText("");
-        }
+//        if (signInPassword.getText().equals("1")){
+//            Users.setCurrentUser(Users.searchUsername(signInTextField.getText()));
+//            Parent root = FXMLLoader.load(getClass().getResource("../FXML/sample.fxml"));
+//            Stage window = (Stage) signInBtn.getScene().getWindow();
+//            window.setScene(new Scene(root));
+//
+//        } else {
+//            incorrect.setVisible(true);
+//            signInPassword.setText("");
+//        }
 
     }
-    public void setHomePage(){
+
+    public void setHomePage() {
         currentPage.setVisible(false);
         homePage.setVisible(true);
         currentPage = homePage;
@@ -56,9 +76,21 @@ public class LogInController {
         currentPage = explorePage;
     }
 
-    public void setChatPage(){
+    public void setChatPage() {
         currentPage.setVisible(false);
         chatPage.setVisible(true);
         currentPage = chatPage;
     }
+
+    public void setNotifPage() {
+        currentPage.setVisible(false);
+        notifPage.setVisible(true);
+        currentPage = notifPage;
+    }
+
+//    public void setEachChat(){
+//        currentPage.setVisible(false);
+//        eachChat.setVisible(true);
+//        currentPage = eachChat;
+//    }
 }

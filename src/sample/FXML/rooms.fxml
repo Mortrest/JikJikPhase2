@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,110 +7,82 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ExploreController">
+<AnchorPane fx:id="Salam" prefHeight="673.0" prefWidth="858.0" style="-fx-background-color: #51c46f;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.RoomsController">
    <children>
       <Pane prefHeight="673.0" prefWidth="858.0" style="-fx-background-color: #f0f4f5;">
          <children>
-            <Label focusTraversable="false" layoutY="1.0" prefHeight="48.0" prefWidth="858.0" style="-fx-background-color: #f9f9f9;" textAlignment="CENTER" />
-            <Label focusTraversable="false" layoutX="26.0" layoutY="5.0" prefHeight="39.0" prefWidth="182.0" text="Rooms">
+            <Label layoutY="1.0" prefHeight="48.0" prefWidth="858.0" style="-fx-background-color: #f9f9f9;" textAlignment="CENTER" />
+            <Label layoutX="26.0" layoutY="5.0" prefHeight="39.0" prefWidth="182.0" text="Rooms">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <ScrollPane focusTraversable="false" layoutY="112.0" prefHeight="561.0" prefWidth="858.0">
+            <ScrollPane fx:id="scroll" layoutY="45.0" prefHeight="632.0" prefWidth="858.0" style="-fx-background-color: transparent;" styleClass="scroll" stylesheets="@../../../resources/focus.css">
                <content>
-                  <AnchorPane id="chatPane" fx:id="chatPane" minHeight="0.0" minWidth="0.0" prefHeight="559.0" prefWidth="856.0" style="-fx-background-color: #f9f9f9;">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="841.0">
                      <children>
-                        <GridPane fx:id="grid" layoutX="-6.0" layoutY="-2.0" prefHeight="561.0" prefWidth="866.0">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
+                        <Pane layoutX="-4.0" layoutY="1.0" prefHeight="57.0" prefWidth="864.0" style="-fx-background-color: #e0e0e0;">
                            <children>
-                              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="119.0" prefWidth="748.0">
-                                 <children>
-                                    <Pane fx:id="TweetPane111" layoutX="35.0" layoutY="-2.0" prefHeight="124.0" prefWidth="744.0">
-                                       <children>
-                                          <Rectangle arcHeight="2.0" arcWidth="5.0" fill="#dcdedd" height="85.0" layoutX="83.0" layoutY="20.0" stroke="#dcdedd" strokeLineCap="ROUND" strokeType="OUTSIDE" style="-fx-arc-height: 10; -fx-arc-width: 15;" width="646.0" />
-                                          <Circle fill="#ff7676" layoutX="128.0" layoutY="62.0" radius="29.0" stroke="WHITE" strokeType="INSIDE" />
-                                          <Label layoutX="165.0" layoutY="33.0" prefHeight="7.0" prefWidth="266.0" style="-fx-background-color: #dcdedd; -fx-background-radius: 30;" text="Ali Falahati - @Mortrest - 9min ago" textFill="#6f6e6e">
-                                             <font>
-                                                <Font name="System Bold" size="13.0" />
-                                             </font>
-                                             <padding>
-                                                <Insets left="10.0" />
-                                             </padding>
-                                          </Label>
-                                          <Label layoutX="175.0" layoutY="52.0" prefHeight="38.0" prefWidth="513.0" text="Pasho berim biroon">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                    </Pane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="119.0" prefWidth="770.0" GridPane.rowIndex="1">
-                                 <children>
-                                    <AnchorPane prefHeight="123.0" prefWidth="838.0">
-                                       <children>
-                                          <Pane fx:id="TweetPane1111" layoutX="35.0" prefHeight="124.0" prefWidth="838.0">
-                                             <children>
-                                                <Rectangle arcHeight="2.0" arcWidth="5.0" fill="#dcdedd" height="85.0" layoutX="83.0" layoutY="20.0" stroke="#dcdedd" strokeLineCap="ROUND" strokeType="OUTSIDE" style="-fx-arc-height: 10; -fx-arc-width: 15;" width="646.0" />
-                                                <Circle fill="#ff7676" layoutX="128.0" layoutY="62.0" radius="29.0" stroke="WHITE" strokeType="INSIDE" />
-                                                <Label layoutX="165.0" layoutY="33.0" prefHeight="7.0" prefWidth="266.0" style="-fx-background-color: #dcdedd; -fx-background-radius: 30;" text="Ali Falahati - @Mortrest - 9min ago" textFill="#6f6e6e">
-                                                   <font>
-                                                      <Font name="System Bold" size="13.0" />
-                                                   </font>
-                                                   <padding>
-                                                      <Insets left="10.0" />
-                                                   </padding>
-                                                </Label>
-                                                <Label layoutX="175.0" layoutY="52.0" prefHeight="38.0" prefWidth="513.0" text="Pasho berim biroon">
-                                                   <font>
-                                                      <Font name="System Bold" size="15.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                             <opaqueInsets>
-                                                <Insets />
-                                             </opaqueInsets>
-                                          </Pane>
-                                    
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
+                              <Label layoutX="24.0" prefHeight="55.0" prefWidth="301.0" text="0 Contacts Online ...">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
                            </children>
-                        </GridPane>
+                        </Pane>
+                        <AnchorPane layoutX="-1.0" layoutY="58.0" prefHeight="566.0" prefWidth="861.0">
+                           <children>
+                              <GridPane fx:id="grid" layoutX="-5.0" layoutY="-76.0" prefHeight="563.0" prefWidth="866.0" styleClass="grid">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="119.0" prefWidth="770.0" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
                </content>
             </ScrollPane>
-         </children>
-      </Pane>
-      <Pane layoutY="46.0" prefHeight="65.0" prefWidth="858.0">
+            <!--            <Pane layoutY="174.0" prefHeight="495.0" prefWidth="858.0" style="-fx-background-color: #FFFFFF;">-->
+            <!--               <children>-->
+            <!--                  <Pane fx:id="TweetPane" layoutX="14.0" layoutY="14.0" prefHeight="124.0" prefWidth="838.0" style="-fx-background-color: #1DA3F3;">-->
+            <!--                     <children>-->
+            <!--                        <Circle fill="#4f769a" layoutX="80.0" layoutY="75.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />-->
+            <!--                        <TextArea editable="false" focusTraversable="false" layoutX="148.0" layoutY="46.0" prefHeight="48.0" prefWidth="609.0" text="What a night it was">-->
+            <!--                           <font>-->
+            <!--                              <Font size="20.0" />-->
+            <!--                           </font>-->
+            <!--                        </TextArea>-->
+            <!--                        <TextField editable="false" focusTraversable="false" layoutX="148.0" layoutY="14.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #1DA3F3;" text="Ali Falahati - @ALI - 9min ago">-->
+            <!--                           <font>-->
+            <!--                              <Font name="System Italic" size="13.0" />-->
+            <!--                           </font>-->
+            <!--                        </TextField>-->
+            <!--                     </children>-->
+            <!--                     <opaqueInsets>-->
+            <!--                        <Insets />-->
+            <!--                     </opaqueInsets>-->
+            <!--                  </Pane>-->
+
+            <!--               </children>-->
+            <!--               <opaqueInsets>-->
+            <!--                  <Insets />-->
+            <!--               </opaqueInsets>-->
+            <!--            </Pane>-->
+         </children></Pane>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="119.0" prefWidth="770.0">
          <children>
-            <Line endX="360.0" layoutX="500.0" layoutY="65.0" startX="-499.0" stroke="#a8a4a4" />
-            <Label focusTraversable="false" layoutX="28.0" layoutY="17.0" prefHeight="31.0" prefWidth="251.0" text="0 Contacts Online ...">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-            </Label>
+            <AnchorPane prefHeight="123.0" prefWidth="838.0" />
          </children>
-      </Pane>
+      </AnchorPane>
+
    </children>
 </AnchorPane>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,99 +12,25 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ExploreController">
+<AnchorPane prefHeight="673.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ChatController">
    <children>
-      <Pane prefHeight="673.0" prefWidth="858.0" style="-fx-background-color: #f0f4f5;">
+      <Pane prefHeight="673.0" prefWidth="1069.0" style="-fx-background-color: #f0f4f5;">
          <children>
-            <Label focusTraversable="false" layoutY="1.0" prefHeight="48.0" prefWidth="858.0" style="-fx-background-color: #f9f9f9;" textAlignment="CENTER" />
-            <Label focusTraversable="false" layoutX="26.0" layoutY="5.0" prefHeight="39.0" prefWidth="182.0" text="Chat">
+            <Label focusTraversable="false" layoutY="1.0" prefHeight="48.0" prefWidth="1069.0" style="-fx-background-color: #f9f9f9;" textAlignment="CENTER" />
+            <Label focusTraversable="false" layoutX="63.0" layoutY="6.0" prefHeight="39.0" prefWidth="182.0" text="Chat">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <ScrollPane focusTraversable="false" layoutY="112.0" prefHeight="509.0" prefWidth="858.0">
-               <content>
-                  <AnchorPane id="chatPane" fx:id="chatPane" minHeight="0.0" minWidth="0.0" prefHeight="503.0" prefWidth="856.0" style="-fx-background-color: #f9f9f9;">
-                     <children>
-                        <GridPane fx:id="grid" layoutX="-6.0" layoutY="-2.0" prefHeight="510.0" prefWidth="866.0">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <AnchorPane prefHeight="145.0" prefWidth="756.0">
-                                 <children>
-                                    <Pane fx:id="TweetPane111" prefHeight="132.0" prefWidth="858.0">
-                                       <children>
-                                          <Circle fill="#ff7676" layoutX="84.0" layoutY="76.0" radius="37.0" stroke="WHITE" strokeType="INSIDE" />
-                                          <Label layoutX="148.0" layoutY="20.0" style="-fx-background-color: #e6ebea; -fx-background-radius: 30;" text="Ali Falahati - 9min ago">
-                                             <font>
-                                                <Font name="System Bold" size="13.0" />
-                                             </font>
-                                             <padding>
-                                                <Insets left="10.0" />
-                                             </padding>
-                                          </Label>
-                                          <Label layoutX="148.0" layoutY="50.0" style="-fx-background-color: #dcdedd; -fx-background-radius: 15;" text="RE ZA">
-                                             <font>
-                                                <Font size="22.0" />
-                                             </font>
-                                             <padding>
-                                                <Insets bottom="10.0" left="15.0" right="20.0" top="10.0" />
-                                             </padding>
-                                          </Label>
-                                       </children>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                    </Pane>
-                                    <AnchorPane layoutX="-26.0" layoutY="128.0" prefHeight="123.0" prefWidth="838.0">
-                                       <children>
-                                          <Pane fx:id="TweetPane1111" layoutX="22.0" prefHeight="124.0" prefWidth="838.0">
-                                             <children>
-                                                <Circle fill="#52ddd2" layoutX="800.0" layoutY="76.0" radius="37.0" stroke="WHITE" strokeType="INSIDE" />
-                                                <Label layoutX="617.0" layoutY="20.0" style="-fx-background-color: #e6ebea; -fx-background-radius: 30;" text="You - 9min ago">
-                                                   <font>
-                                                      <Font name="System Bold" size="13.0" />
-                                                   </font>
-                                                   <padding>
-                                                      <Insets left="10.0" />
-                                                   </padding>
-                                                </Label>
-                                                <Label layoutX="656.0" layoutY="50.0" style="-fx-background-color: #dcdedd; -fx-background-radius: 15;" text="بای">
-                                                   <font>
-                                                      <Font size="22.0" />
-                                                   </font>
-                                                   <padding>
-                                                      <Insets bottom="10.0" left="15.0" right="20.0" top="10.0" />
-                                                   </padding>
-                                                </Label>
-                                             </children>
-                                             <opaqueInsets>
-                                                <Insets />
-                                             </opaqueInsets>
-                                          </Pane>
-                                    
-                                       </children>
-                                    </AnchorPane>
-                              
-                                                         </children>
-                              </AnchorPane>
-                           </children>
-                        </GridPane>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </ScrollPane>
-            <Pane layoutX="1.0" layoutY="609.0" prefHeight="65.0" prefWidth="858.0" style="-fx-background-color: #43e86f; -fx-region-border: #fffff;">
+            <Button fx:id="backBtn" layoutX="19.0" layoutY="10.0" mnemonicParsing="false" onAction="#back" prefHeight="31.0" prefWidth="34.0" style="-fx-background-color: #f23a71;" text="⬅" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Pane layoutX="1.0" layoutY="609.0" prefHeight="65.0" prefWidth="1069.0" style="-fx-region-border: #fffff;">
                <children>
-                  <TextArea focusTraversable="false" layoutX="-1.0" prefHeight="65.0" prefWidth="780.0" promptText="Enter Your Message">
+                  <TextArea fx:id="textArea" focusTraversable="false" layoutX="-1.0" prefHeight="65.0" prefWidth="989.0" promptText="Enter Your Message" style="-fx-background-color: transparent;">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -112,7 +38,7 @@
                         <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextArea>
-                  <Button layoutX="775.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="83.0" style="-fx-background-color: #1DA3F3;" text="SEND" textFill="WHITE">
+                  <Button fx:id="submit" layoutX="986.0" layoutY="1.0" mnemonicParsing="false" onAction="#addChat" prefHeight="62.0" prefWidth="84.0" style="-fx-background-color: #1DA3F3;" text="SEND" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -122,22 +48,44 @@
                   </Button>
                </children>
             </Pane>
+            <ScrollPane layoutX="2.0" layoutY="115.0" prefHeight="495.0" prefWidth="1069.0" stylesheets="@../../../resources/focus.css">
+               <content>
+                  <AnchorPane id="chatPane" fx:id="chatPane" prefHeight="392.0">
+                     <children>
+                        <GridPane fx:id="grid" layoutX="131.0" layoutY="14.0" prefHeight="48.0" prefWidth="635.0" AnchorPane.bottomAnchor="441.0" AnchorPane.rightAnchor="237.0" AnchorPane.topAnchor="14.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <children>
+                              <AnchorPane prefHeight="150.0" prefWidth="833.0" />
+                           </children>
+                           <rowConstraints>
+                              <RowConstraints />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <styleClass>
+                  <String fx:value="scroll" />
+                  <String fx:value="scroll-bar" />
+               </styleClass>
+            </ScrollPane>
          </children>
       </Pane>
-      <Pane layoutY="46.0" prefHeight="65.0" prefWidth="858.0">
+      <Pane layoutY="46.0" prefHeight="65.0" prefWidth="1069.0" AnchorPane.bottomAnchor="562.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0">
          <children>
-            <Label focusTraversable="false" layoutX="98.0" layoutY="33.0" prefHeight="31.0" prefWidth="163.0" text="Last seen recently" textFill="#838181">
+            <Label fx:id="lastSeen" focusTraversable="false" layoutX="76.0" layoutY="33.0" prefHeight="31.0" prefWidth="163.0" text="Last seen recently" textFill="#838181">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Line endX="360.0" layoutX="500.0" layoutY="65.0" startX="-499.0" stroke="#a8a4a4" />
-            <Label focusTraversable="false" layoutX="96.0" layoutY="4.0" text="Iman Moghimian">
+            <Label fx:id="fName" focusTraversable="false" layoutX="74.0" layoutY="4.0" text="Iman Moghimian">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <Circle fill="#52ddd2" layoutX="63.0" layoutY="33.0" radius="23.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle fill="#52ddd2" layoutX="37.0" layoutY="35.0" radius="23.0" stroke="WHITE" strokeType="INSIDE" />
          </children>
       </Pane>
    </children>

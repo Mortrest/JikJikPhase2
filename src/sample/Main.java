@@ -20,7 +20,7 @@ public class Main extends Application {
         Users users = new Users(m,tweets,chats,notifs);
 
         Parent root = FXMLLoader.load(getClass().getResource("FXML/SignIn.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("JikJik");
         primaryStage.setScene(new Scene(root, 1069, 673));
         primaryStage.show();
 

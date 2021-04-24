@@ -10,6 +10,9 @@ import java.util.Random;
 public class Chats{
     LinkedList<Room> rooms;
     LinkedList<Chat> chats;
+
+
+    static String roomID;
     ModelLoader ml;
     public Chats(ModelLoader modelLoader){
         this.ml = modelLoader;
@@ -35,6 +38,13 @@ public class Chats{
         return userRooms;
     }
 
+     public static String getRoomID() {
+        return roomID;
+    }
+
+     public static void setRoomID(String roomID) {
+        Chats.roomID = roomID;
+    }
 
 
     public LinkedList<Chat> getChats() {
@@ -115,7 +125,7 @@ public class Chats{
     public LinkedList<Chat> sortByDate(LinkedList<Chat> chat){
         for (int i = 0; i < chat.size(); i++) {
             if (i != 0) {
-                while (Long.parseLong(chat.get(i).getDate()) > Long.parseLong(chat.get(i - 1).getDate())) {
+                while (Long.parseLong(chat.get(i).getDate()) < Long.parseLong(chat.get(i - 1).getDate())) {
                     Chat a = chat.get(i - 1);
                     Chat b = chat.get(i);
                     chat.remove(i - 1);

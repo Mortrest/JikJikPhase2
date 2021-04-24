@@ -46,7 +46,7 @@ public class Users {
         ml.log(msg);
     }
 
-    public Notifs getNotifs() {
+    public static Notifs getNotifs() {
         return notifs;
     }
 

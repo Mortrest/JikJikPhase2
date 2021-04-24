@@ -12,8 +12,10 @@ public class Tweets {
         return tweets;
     }
 
-    LinkedList<Tweet> tweets;
+    static LinkedList<Tweet> tweets;
     ModelLoader ml;
+
+    static String tweetID;
 
     public Tweets(ModelLoader modelLoader) {
         tweets = modelLoader.loadTweets();
@@ -21,18 +23,32 @@ public class Tweets {
         this.ml = modelLoader;
     }
 
-    public LinkedList<Tweet> getComments(String tweetID,Users users) {
+
+
+
+
+    public static String getTweetID() {
+        return tweetID;
+    }
+
+    public static void setTweetID(String tweetID) {
+        Tweets.tweetID = tweetID;
+    }
+
+
+    public LinkedList<Tweet> getComments(String tweetID) {
         LinkedList<Tweet> comments = new LinkedList<>();
         for (Tweet tw : tweets){
-            if (tw.getParent().equals(tweetID) && users.searchUsername(tw.getOwner()).isActive()){
+            if (tw.getParent().equals(tweetID) && Users.searchUsername(tw.getOwner()).isActive()){
                 comments.add(tw);
             }
         }
+        System.out.println(comments + "fff");
         return comments;
     }
 
     // Searching by ID
-    public Tweet search(String ID) {
+    public static Tweet search(String ID) {
         for (Tweet tw : tweets) {
             if (tw.getID().equals(ID)) {
                 return tw;

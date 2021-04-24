@@ -1,0 +1,9 @@
+.scroll:focused {
+    -fx-focus-color: #F9F9F9;
+    -fx-background-insets: -1.4, 0, 1, 2;
+}
+
+.scroll-bar:horizontal {
+	-fx-background-color: transparent;
+	-fx-border-width: 0;
+}
