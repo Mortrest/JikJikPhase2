@@ -65,7 +65,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btnT11111"  layoutX="10.0" layoutY="262.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="215.0" style="-fx-background-radius: 23; -fx-background-color: #eff1f2;" text="Profile" textFill="#41acda">
+                  <Button fx:id="btnT11111" onAction="#setProfilePage"  layoutX="10.0" layoutY="262.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="215.0" style="-fx-background-radius: 23; -fx-background-color: #eff1f2;" text="Profile" textFill="#41acda">
                      <font>
                         <Font name="System Bold" size="27.0" />
                      </font>
@@ -200,6 +200,9 @@
          <fx:include source="settings.fxml" />
       </AnchorPane>
 
+      <AnchorPane fx:id="profilePage" layoutX="212.0" layoutY="-1.0" prefHeight="666.0" prefWidth="858.0" visible="false">
+         <fx:include source="profile.fxml" />
+      </AnchorPane>
 
    </children>
 </AnchorPane>

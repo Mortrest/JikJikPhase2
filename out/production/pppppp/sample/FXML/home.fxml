@@ -21,7 +21,7 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <ScrollPane layoutY="48.0" prefHeight="629.0" prefWidth="858.0">
+            <ScrollPane layoutY="48.0" prefHeight="629.0" prefWidth="858.0" style="-fx-background-color: transparent;">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="841.0">
                      <children>
