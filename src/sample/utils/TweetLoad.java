@@ -1,0 +1,57 @@
+package sample.utils;
+
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import sample.Controllers.TweetComponentController;
+import sample.Models.Tweet;
+import sample.Models.Tweets;
+import sample.Models.Users;
+
+import java.io.IOException;
+import java.util.LinkedList;
+
+public class TweetLoad {
+    GridPane grid;
+    TextArea textArea;
+    public TweetLoad(GridPane grid,TextArea textArea, int type) throws IOException {
+        this.grid = grid;
+        LinkedList<Tweet> tw = Users.getTweets().showTweetOwnPage(Users.class,Users.getCurrentUser().getUsername(), type);
+        for (int i = 1; i < tw.size()+1; i++) {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../FXML/TweetComponent.fxml"));
+            AnchorPane anchorPane = fxmlLoader.load();
+            TweetComponentController itemController = fxmlLoader.getController();
+            int finalI = i-1;
+            itemController.getIdPane().setOnMouseClicked(e -> {
+                try {
+                    tweetPage(tw.get(finalI).getID());
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            });
+            itemController.setNameLabel(tw.get(i-1).getOwner());
+            itemController.setTweetLabel(tw.get(i-1).getText());
+            grid.add(anchorPane,1,grid.getRowCount()+1);
+            GridPane.setMargin(anchorPane, new Insets(10));
+        }
+
+    }
+    public void tweetPage(String ID) throws IOException {
+        Tweets.setTweetID(ID);
+        new ChangeScene("../FXML/sample.fxml",grid);
+
+    }
+    public void addTweet() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../FXML/TweetComponent.fxml"));
+        AnchorPane anchorPane = fxmlLoader.load();
+        TweetComponentController itemController = fxmlLoader.getController();
+        itemController.setTweetLabel(textArea.getText());
+        grid.add(anchorPane, 1, grid.getRowCount() + 1);
+        GridPane.setMargin(anchorPane, new Insets(10));
+        textArea.setText("");
+    }
+}

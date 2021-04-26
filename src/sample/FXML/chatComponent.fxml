@@ -15,7 +15,7 @@
          <children>
             <Pane fx:id="TweetPane111" layoutX="-22.0" prefHeight="124.0" prefWidth="838.0">
                <children>
-                  <Circle fill="#ff7676" layoutX="105.0" layoutY="82.0" radius="29.0" stroke="WHITE" strokeType="INSIDE" />
+                  <Circle fx:id="circle" fill="#ff7676" layoutX="105.0" layoutY="82.0" radius="29.0" stroke="WHITE" strokeType="INSIDE" />
                   <Label fx:id="name" layoutX="148.0" layoutY="34.0" prefHeight="7.0" prefWidth="266.0" style="-fx-background-radius: 30;" text="Ali Falahati - @Mortrest - 9min ago" textFill="#6f6e6e">
                      <font>
                         <Font name="System Bold" size="13.0" />

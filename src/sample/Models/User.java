@@ -82,6 +82,9 @@ public class User {
         return username;
     }
 
+    public String getName(){
+        return firstName + " " + lastName;
+    }
     public void setPrivate(boolean aPrivate) {
         isPrivate = aPrivate;
     }

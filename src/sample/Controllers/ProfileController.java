@@ -1,15 +1,11 @@
 package sample.Controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 import sample.Models.Tweet;
 import sample.Models.Tweets;
 import sample.Models.User;
@@ -21,9 +17,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class ProfileController {
-
-    @FXML
-    private AnchorPane Salam;
 
     @FXML
     private Label fNames;

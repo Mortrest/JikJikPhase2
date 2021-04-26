@@ -195,7 +195,7 @@ public class Users {
         ml.saveUser(users);
     }
     // Making tweet
-    public void makeTweet(User userf,String textf){
+    public static void makeTweet(User userf,String textf){
         tweets.makeTweet(textf,"0",userf.getUsername(),userf.getFollowers());
     }
 

@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -21,17 +22,24 @@ import java.util.LinkedList;
 
 public class eachTweetController {
     @FXML
+    private Label nameLabel;
+
+    @FXML
+    private Label tweetLabel;
+
+    @FXML
     public GridPane grid;
     @FXML
     private TextArea textArea;
     @FXML
     private Button backBtn;
     public void initialize() throws IOException {
-        System.out.println(Tweets.getTweetID());
         LinkedList<Tweet> tw = Users.getTweets().getComments(Tweets.getTweetID());
-        System.out.println(tw.size() + "Hello");
+        if (Tweets.getTweetID() != null) {
+            Tweet pageTweet = Tweets.search(Tweets.getTweetID());
+            nameLabel.setText("@" + pageTweet.getOwner() + " - " + Users.searchUsername(pageTweet.getOwner()).getName());
+        }
         for (int i = 1; i < tw.size()+1; i++) {
-            System.out.println(tw);
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("../FXML/TweetComponent.fxml"));
             AnchorPane anchorPane = fxmlLoader.load();
@@ -56,10 +64,6 @@ public class eachTweetController {
     public void tweetPage(String ID) throws IOException {
         Tweets.setTweetID(ID);
         new ChangeScene("../FXML/sample.fxml",grid);
-//        FXMLLoader fxmlLoader = new FXMLLoader();
-//        Parent root = fxmlLoader.load(getClass().getResource("../FXML/sample.fxml"));
-//        Stage window = (Stage) grid.getScene().getWindow();
-//        window.setScene(new Scene(root));
     }
 
     public void back() throws IOException {
@@ -69,10 +73,5 @@ public class eachTweetController {
             Tweets.setTweetID(Tweets.search(Tweets.getTweetID()).getParent());
         }
         new ChangeScene("../FXML/sample.fxml",grid);
-//        FXMLLoader fxmlLoader = new FXMLLoader();
-//        Parent root = fxmlLoader.load(getClass().getResource("../FXML/sample.fxml"));
-//        Stage window = (Stage) grid.getScene().getWindow();
-//        window.setScene(new Scene(root));
-
     }
 }

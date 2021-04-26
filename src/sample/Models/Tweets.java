@@ -13,7 +13,7 @@ public class Tweets {
     }
 
     static LinkedList<Tweet> tweets;
-    ModelLoader ml;
+    static ModelLoader ml;
 
     static String tweetID;
 
@@ -58,7 +58,7 @@ public class Tweets {
     }
 
     // Making Tweets
-    public void makeTweet(String text, String parent, String owner, LinkedList<String> followers) {
+    public static void makeTweet(String text, String parent, String owner, LinkedList<String> followers) {
         Date date = new Date();
         LinkedList<String> str2 = new LinkedList<>();
         Random random = new Random();
