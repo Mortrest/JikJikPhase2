@@ -75,7 +75,7 @@ public class Chats{
     // Making Comments
     public void makeChat(String text,String owner,String roomID){
         Date date = new Date();
-        Chat chat = new Chat(roomID,text,Long.toString(date.getTime()),owner);
+        Chat chat = new Chat(roomID,text,Long.toString(date.getTime()),owner,false,false);
         chats.add(chat);
         try {
             Room room = searchRoomID(roomID);

@@ -3,6 +3,8 @@
     <CLASSES>
       <root url="file://$USER_HOME$/JetBrains/javafx-sdk-11.0.2/lib" />
       <root url="jar://$PROJECT_DIR$/../../Phase2/gson-2.8.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/fontawesomefx-commons-9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/fontawesomefx-fontawesome-4.7.0-9.1.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

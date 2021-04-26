@@ -17,7 +17,7 @@ import java.io.IOException;
 public class LogInController {
     public AnchorPane settingsPage;
     @FXML
-    private AnchorPane homePage, explorePage, chatPage, currentPage, notifPage, eachChat,eachTweet;
+    private AnchorPane homePage, explorePage, chatPage, currentPage, notifPage, eachChat,eachTweet,profilePage;
     @FXML
     private PasswordField signInPassword;
     @FXML
@@ -47,6 +47,7 @@ public class LogInController {
 
     public void SignIn() throws IOException {
         Users.setCurrentUser(Users.searchUsername("morty"));
+        Users.setProfile(Users.getCurrentUser());
         Parent root = FXMLLoader.load(getClass().getResource("../FXML/sample.fxml"));
         Stage window = (Stage) signInBtn.getScene().getWindow();
         window.setScene(new Scene(root));
@@ -93,6 +94,12 @@ public class LogInController {
         currentPage.setVisible(false);
         settingsPage.setVisible(true);
         currentPage = settingsPage;
+    }
+
+    public void setProfilePage(){
+        currentPage.setVisible(false);
+        profilePage.setVisible(true);
+        currentPage = profilePage;
     }
 
 //    public void setEachChat(){

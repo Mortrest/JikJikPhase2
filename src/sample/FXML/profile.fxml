@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Salam" prefHeight="673.0" prefWidth="858.0" style="-fx-background-color: #51c46f;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.HomePageController">
+<AnchorPane fx:id="Salam" prefHeight="673.0" prefWidth="858.0" style="-fx-background-color: #51c46f;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ProfileController">
    <children>
       <Pane prefHeight="673.0" prefWidth="858.0" style="-fx-background-color: #f0f4f5;">
          <children>
@@ -23,7 +23,7 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <ScrollPane layoutY="48.0" prefHeight="629.0" prefWidth="858.0">
+            <ScrollPane focusTraversable="false" layoutY="48.0" prefHeight="629.0" prefWidth="858.0" style="-fx-background-color: transparent;">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="841.0">
                      <children>
@@ -31,17 +31,17 @@
                            <children>
                               <Circle fill="#27d7c8" layoutX="149.0" layoutY="149.0" radius="59.0" stroke="WHITE" strokeType="INSIDE" />
                               <Line endX="641.0" endY="228.0" layoutX="223.0" layoutY="-61.0" startX="-18.500015258789062" startY="228.0" />
-                              <Label layoutX="19.0" text="Ali Falahati">
+                              <Label fx:id="fNames" layoutX="19.0" text="Ali Falahati">
                                  <font>
                                     <Font name="System Bold" size="37.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="19.0" layoutY="51.0" opacity="0.49" prefHeight="32.0" prefWidth="168.0" text="\@Ali_Falahati80">
+                              <Label fx:id="username" layoutX="19.0" layoutY="51.0" opacity="0.49" prefHeight="32.0" prefWidth="168.0" text="\@Ali_Falahati80">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="249.0" layoutY="95.0" prefHeight="65.0" prefWidth="569.0" text="Interested in linear Programming and kadakh =))">
+                              <Label fx:id="bio" layoutX="249.0" layoutY="95.0" prefHeight="65.0" prefWidth="569.0" text="Interested in linear Programming and kadakh =))">
                                  <font>
                                     <Font name="Comic Sans MS Bold Italic" size="20.0" />
                                  </font>
@@ -56,22 +56,22 @@
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="264.0" layoutY="43.0" prefHeight="48.0" prefWidth="51.0" text="24">
+                              <Label fx:id="flwrsCount" layoutX="264.0" layoutY="43.0" prefHeight="48.0" prefWidth="51.0" text="24">
                                  <font>
                                     <Font name="System Bold Italic" size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="438.0" layoutY="43.0" prefHeight="48.0" prefWidth="51.0" text="156">
+                              <Label fx:id="flwingCount" layoutX="438.0" layoutY="43.0" prefHeight="48.0" prefWidth="51.0" text="156">
                                  <font>
                                     <Font name="System Bold Italic" size="20.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="638.0" layoutY="48.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: #1DA3F3;" text="Follow" textFill="WHITE">
+                              <Button fx:id="followBtn" layoutX="638.0" layoutY="48.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: #1DA3F3;" text="Follow" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font></Button>
                               <ComboBox layoutX="731.0" layoutY="48.0" prefHeight="39.0" prefWidth="78.0" promptText="More" style="-fx-background-color: #f54787;" visibleRowCount="4" />
-                              <Label layoutX="264.0" layoutY="10.0" prefHeight="33.0" prefWidth="313.0" text="You're not following him" textFill="#9a9797">
+                              <Label fx:id="isFollowing" layoutX="264.0" layoutY="10.0" prefHeight="33.0" prefWidth="313.0" text="You're not following him" textFill="#9a9797">
                                  <font>
                                     <Font name="System Bold Italic" size="15.0" />
                                  </font>
@@ -80,7 +80,7 @@
                         </Pane>
                         <AnchorPane layoutX="-1.0" layoutY="135.0" prefHeight="489.0" prefWidth="858.0">
                            <children>
-                              <GridPane fx:id="grid" layoutX="-5.0" layoutY="-2.0" prefHeight="489.0" prefWidth="866.0">
+                              <GridPane fx:id="grid" layoutX="-5.0" layoutY="47.0" prefHeight="440.0" prefWidth="866.0">
                                  <columnConstraints>
                                     <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
                                  </columnConstraints>
@@ -90,12 +90,12 @@
                               </GridPane>
                            </children>
                         </AnchorPane>
+                        <Line endX="92.49998474121094" endY="185.0" layoutY="-53.0" startX="-1.52587890625E-5" startY="185.0" />
                      </children>
                   </AnchorPane>
                </content>
             </ScrollPane>
          </children>
       </Pane>
-      <Line endX="92.49998474121094" endY="185.0" startX="-1.52587890625E-5" startY="185.0" />
    </children>
 </AnchorPane>

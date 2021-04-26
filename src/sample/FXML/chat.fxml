@@ -48,9 +48,9 @@
                   </Button>
                </children>
             </Pane>
-            <ScrollPane layoutX="2.0" layoutY="115.0" prefHeight="495.0" prefWidth="1069.0" stylesheets="@../../../resources/focus.css">
+            <ScrollPane layoutX="15.0" layoutY="115.0" prefHeight="495.0" prefWidth="1080.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/focus.css">
                <content>
-                  <AnchorPane id="chatPane" fx:id="chatPane" prefHeight="392.0">
+                  <AnchorPane id="chatPane" fx:id="chatPane" maxWidth="200.0" prefHeight="392.0" prefWidth="100.0">
                      <children>
                         <GridPane fx:id="grid" layoutX="131.0" layoutY="14.0" prefHeight="48.0" prefWidth="635.0" AnchorPane.bottomAnchor="441.0" AnchorPane.rightAnchor="237.0" AnchorPane.topAnchor="14.0">
                            <columnConstraints>
@@ -73,7 +73,7 @@
             </ScrollPane>
          </children>
       </Pane>
-      <Pane layoutY="46.0" prefHeight="65.0" prefWidth="1069.0" AnchorPane.bottomAnchor="562.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0">
+      <Pane layoutY="46.0" prefHeight="65.0" prefWidth="1069.0" style="-fx-background-color: #dae6e5;" AnchorPane.bottomAnchor="562.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0">
          <children>
             <Label fx:id="lastSeen" focusTraversable="false" layoutX="76.0" layoutY="33.0" prefHeight="31.0" prefWidth="163.0" text="Last seen recently" textFill="#838181">
                <font>

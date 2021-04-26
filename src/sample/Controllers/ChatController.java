@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import sample.Models.*;
+import sample.utils.ChangeScene;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -68,10 +69,11 @@ public class ChatController {
     }
 
     public void back() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root = fxmlLoader.load(getClass().getResource("../FXML/sample.fxml"));
-        Stage window = (Stage) grid.getScene().getWindow();
-        window.setScene(new Scene(root));
+        new ChangeScene("../FXML/sample.fxml",grid);
+//        FXMLLoader fxmlLoader = new FXMLLoader();
+//        Parent root = fxmlLoader.load(getClass().getResource("../FXML/sample.fxml"));
+//        Stage window = (Stage) grid.getScene().getWindow();
+//        window.setScene(new Scene(root));
     }
 
     public void addChat() throws IOException {

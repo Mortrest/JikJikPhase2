@@ -10,7 +10,7 @@ public class Users {
     static Chats chats;
     static Notifs notifs;
 
-
+    static User Profile;
     static User currentUser;
     static ModelLoader ml;
 
@@ -21,6 +21,14 @@ public class Users {
         Users.tweets = tweets;
         Users.chats = chats;
         Users.notifs = notifs;
+    }
+
+    public static User getProfile() {
+        return Profile;
+    }
+
+    public static void setProfile(User profile) {
+        Profile = profile;
     }
 
     public static User getCurrentUser() {
