@@ -6,6 +6,8 @@ import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import sample.Models.Tweets;
 import sample.Models.Users;
 import sample.utils.TweetLoad;
 
@@ -15,13 +17,14 @@ public class HomePageController {
     @FXML
     public GridPane grid;
     @FXML
-    private TextArea textArea;
+    private TextArea textArea,overlayText;
+    @FXML
+    private Pane overlay;
 
     public void initialize() throws IOException {
         loadData();
     }
 
-    //Adding tweet
     public void addTweet() throws IOException {
         Users.makeTweet(Users.getCurrentUser(),textArea.getText());
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -35,7 +38,21 @@ public class HomePageController {
     }
 
     public void loadData() throws IOException {
-        new TweetLoad(grid, textArea,3);
+        new TweetLoad(grid, textArea,3,overlay).load();
     }
+
+    public void closeOverlay(){
+        overlay.setVisible(false);
+    }
+
+    public void sendComment() throws IOException {
+        if (overlayText.getText() != null){
+            overlay.setVisible(false);
+            Tweets.makeTweet(overlayText.getText(),Tweets.getComment(),Users.getCurrentUser().getUsername(),Users.getCurrentUser().getFollowers());
+            loadData();
+        }
+    }
+
+
 
 }

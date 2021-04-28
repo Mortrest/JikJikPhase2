@@ -1,5 +1,10 @@
-{"roomID":"15","date":"1616515405959","owner1":"jojo","owner2":"jojo","unread1":0,"unread2":1}
-{"roomID":"16","date":"1616602424032","owner1":"morty","owner2":"morty","unread1":0,"unread2":0}
-{"roomID":"60807","date":"1616602785333","owner1":"morty","owner2":"jojo","unread1":2,"unread2":0}
-{"roomID":"6080337","date":"1616602785333","owner1":"morty","owner2":"jojo","unread1":2,"unread2":0}
-{"roomID":"608072","date":"1616602785333","owner1":"morty","owner2":"jojo","unread1":2,"unread2":0}
+{"roomID":"80623","date":"1619598198905","members":["jojo","Mojo","morty"],"type":"gp","groupName":"Bitches","unread1":0,"unread2":0}
+{"roomID":"71588","date":"1619598299098","members":["gojo","sojo","morty"],"type":"gp","groupName":"wowo","unread1":0,"unread2":0}
+{"roomID":"15","date":"1616515405959","owner1":"jojo","owner2":"jojo","type":"pv","unread1":0,"unread2":1}
+{"roomID":"16","date":"1616602424032","owner1":"morty","owner2":"morty","type":"pv","unread1":0,"unread2":0}
+{"roomID":"60807","date":"1616602785333","owner1":"morty","owner2":"jojo","type":"pv","unread1":2,"unread2":0}
+{"roomID":"6080337","date":"1616602785333","owner1":"morty","owner2":"jojo","type":"pv","unread1":2,"unread2":0}
+{"roomID":"608072","date":"1616602785333","owner1":"morty","owner2":"jojo","type":"pv","unread1":2,"unread2":0}
+{"roomID":"10868","date":"1619598421034","members":["sojo","lojo","gojo","Mojo","morty"],"type":"gp","groupName":"looool","unread1":0,"unread2":0}
+{"roomID":"79761","date":"1619598468763","members":["jojo","Mojo","gojo","morty"],"type":"gp","groupName":"Ghooool","unread1":0,"unread2":0}
+{"roomID":"33659","date":"1619624194548","members":["jojo","Mojo","gojo","morty"],"type":"gp","groupName":"pipi","unread1":0,"unread2":0}

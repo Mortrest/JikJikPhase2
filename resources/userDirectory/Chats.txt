@@ -1,2 +1,2 @@
-{"ID":"87031","roomID":"16","text":"dickam dahane iman","date":"1619424527202","owner":"morty","edited":false,"forwarded":false}
-{"ID":"6459","roomID":"60807","text":"dickiiiii HASTI bemola\n","date":"1619424537945","owner":"morty","edited":true,"forwarded":false}
+{"ID":"61177","roomID":"71588","text":"salam","date":"1619599502778","owner":"morty","edited":false,"forwarded":false}
+{"ID":"14341","roomID":"43582","text":"Salma","date":"1619622284417","owner":"morty","edited":false,"forwarded":false}

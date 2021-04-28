@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="159.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.TweetComponentController">
@@ -30,13 +31,44 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <FontAwesomeIconView fill="#7c7c7c" glyphName="HEART" layoutX="310.0" layoutY="130.0" size="20" wrappingWidth="33.0" />
-            <FontAwesomeIconView fill="#51ace1" glyphName="RETWEET" layoutX="210.0" layoutY="130.0" size="20" wrappingWidth="26.785715103149414" />
-            <FontAwesomeIconView fill="#7a7a7a" glyphName="COMMENT" layoutX="110.0" layoutY="130.0" selectionFill="#834949" size="20" text="" />
-            <FontAwesomeIconView fill="#7c7c7c" glyphName="SHARE" layoutX="410.0" layoutY="130.0" size="20" />
-            <FontAwesomeIconView fill="#7a7a7a" glyphName="FLAG" layoutX="510.0" layoutY="130.0" size="20" wrappingWidth="33.0" />
-            <FontAwesomeIconView fill="#e12929" glyphName="BAN" layoutX="610.0" layoutY="130.0" size="20" />
-            <FontAwesomeIconView fill="#7c7c7c" glyphName="BELL" layoutX="710.0" layoutY="130.0" size="20" wrappingWidth="33.0" />
+            <FontAwesomeIconView fx:id="like" onMouseClicked="#likeTweet" fill="#7c7c7c" glyphName="HEART" layoutX="310.0" layoutY="130.0" size="20" wrappingWidth="33.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="ret" fill="#51ace1" glyphName="RETWEET" layoutX="220.0" layoutY="130.0" size="20" wrappingWidth="26.785715103149414">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="comment" fill="#7a7a7a" glyphName="COMMENT" layoutX="110.0" layoutY="130.0" selectionFill="#834949" size="20" text="">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="forward" fill="#7c7c7c" glyphName="SHARE" layoutX="423.0" layoutY="130.0" size="20">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="report" fill="#7a7a7a" glyphName="FLAG" layoutX="517.0" layoutY="130.0" size="20" wrappingWidth="33.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="block" fill="#e12929" glyphName="BAN" layoutX="615.0" layoutY="130.0" size="20">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="mute" fill="#7c7c7c" glyphName="BELL" layoutX="710.0" layoutY="130.0" size="20" wrappingWidth="33.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <Label fx:id="likeCount" layoutX="345.0" layoutY="109.0" prefHeight="29.0" prefWidth="39.0" text="23">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="commentCount" layoutX="142.0" layoutY="109.0" prefHeight="29.0" prefWidth="39.0" text="23">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane fx:id="idPane" layoutX="12.0" layoutY="17.0" prefHeight="104.0" prefWidth="765.0">
@@ -44,5 +76,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Pane>
+      <Line endX="737.0" endY="141.85711669921875" startX="715.0" startY="127.0" stroke="#757575" strokeWidth="2.0" />
+      <FontAwesomeIconView fx:id="liked" onMouseClicked="#likeTweet" fill="#ff4f81" glyphName="HEART" layoutX="315.0" layoutY="139.0" size="20" visible="false" wrappingWidth="33.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </FontAwesomeIconView>
    </children>
 </AnchorPane>

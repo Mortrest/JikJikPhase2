@@ -11,7 +11,7 @@ public class Tweets {
     public LinkedList<Tweet> getTweets() {
         return tweets;
     }
-
+    static String comment;
     static LinkedList<Tweet> tweets;
     static ModelLoader ml;
 
@@ -24,8 +24,13 @@ public class Tweets {
     }
 
 
+    public static String getComment() {
+        return comment;
+    }
 
-
+    public static void setComment(String comment) {
+        Tweets.comment = comment;
+    }
 
     public static String getTweetID() {
         return tweetID;
@@ -65,7 +70,7 @@ public class Tweets {
         Tweet tweet = new Tweet(Integer.toString(random.nextInt(100000)), text,parent, followers, Long.toString(date.getTime()), str2, owner, false);
         tweets.add(tweet);
         ml.log("Tweets-"+"Tweet Created " + text);
-        ml.saveTweet(tweets);
+        ml.save(tweets,"Tweets");
     }
 
     // ُShowing Tweets
@@ -115,7 +120,7 @@ public class Tweets {
     }
 
     // Liking Tweets
-    public void likeTweet(User user, Tweet tweet) {
+    public static void likeTweet(User user, Tweet tweet) {
         if (tweet.getLikes().contains(user.getUsername())) {
             tweet.getLikes().remove(user.getUsername());
             ml.log("Tweets-"+user.getUsername() + " Liked Tweet ID " + tweet.getID());
@@ -123,17 +128,17 @@ public class Tweets {
             tweet.getLikes().add(user.getUsername());
             ml.log("Tweets-"+user.getUsername() + " Unliked Tweet ID " + tweet.getID());
         }
-        ml.saveTweet(tweets);
+        ml.save(tweets,"Tweets");
     }
 
     // Retweeting
-    public void reTweet(Tweet tweet, User user) {
+    public static void reTweet(Tweet tweet, User user) {
         Date date = new Date();
         LinkedList<String> str2 = new LinkedList<>();
         Tweet tw = new Tweet(Integer.toString(tweets.size() + 1), tweet.getText(),tweet.getParent(), user.getFollowers(), Long.toString(date.getTime()), str2, user.getUsername(), true);
         tweets.add(tw);
         ml.log("Tweets-"+user.getUsername() + " Retweeted Tweet ID " + tweet.getID());
-        ml.saveTweet(tweets);
+        ml.save(tweets,"Tweets");
     }
 
     // Adding tweets to newly followed
@@ -144,7 +149,7 @@ public class Tweets {
             }
         }
         ml.log("Tweets-"+current + " Followed " + target);
-        ml.saveTweet(tweets);
+        ml.save(tweets,"Tweets");
     }
 
     // Removing dependents with unfollow
@@ -155,7 +160,7 @@ public class Tweets {
             }
         }
         ml.log("Tweets-"+current + " Unfollowed " + target);
-        ml.saveTweet(tweets);
+        ml.save(tweets,"Tweets");
     }
 
     // Sorting by date
@@ -209,7 +214,7 @@ public class Tweets {
             tw.getLikes().removeIf(str -> str.equals(user.getUsername()));
         }
         ml.log("Tweets-"+user.getUsername() + " Tweets Deleted!");
-        ml.saveTweet(tweets);
+        ml.save(tweets,"Tweets");
 
     }
 

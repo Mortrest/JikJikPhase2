@@ -1,8 +1,12 @@
 package sample.Controllers;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import sample.Models.Chat;
 import sample.Models.Chats;
 import sample.Models.Room;
@@ -14,11 +18,84 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class RoomsController {
-
     @FXML
-    private GridPane grid;
+    public TextField groupName;
+    @FXML
+    public Button closeOverlay;
+    @FXML
+    public Button createGroup;
+    @FXML
+    public Pane overlay;
+    @FXML
+    private GridPane grid,overlayGrid;
     public void initialize() throws IOException {
+        loadData();
+    }
+
+    public void loadFollowers() throws IOException {
+        LinkedList<String> followers = Users.getCurrentUser().getFollowers();
+        for (String str : followers){
+            LoadComponent loadComponent = new LoadComponent("../FXML/FollowersComponent.fxml");
+            AnchorPane anchorPane = loadComponent.loadAnchor();
+            FollowerComponentController item = loadComponent.loadFxml().getController();
+            item.setName("@"+str);
+            item.getPane().setOnMouseClicked(e -> chooseFlwr(item,str));
+            overlayGrid.add(anchorPane,1,overlayGrid.getRowCount()+1);
+            overlayGrid.setLayoutX(-150);
+            overlayGrid.setLayoutY(-25);
+            GridPane.setMargin(anchorPane, new Insets(-25));
+        }
+    }
+
+    public void chatPage(String id) throws IOException {
+        Chats.setRoomID(id);
+        new ChangeScene("../FXML/chat.fxml",grid);
+    }
+    public void closeOverlay(){
+        overlay.setVisible(false);
+    }
+
+    public void openOverlay(){
+        overlay.setVisible(true);
+    }
+
+//    public void newRoom(String groupName,String roomID) throws IOException {
+//        LoadComponent loadComponent = new LoadComponent("../FXML/roomProfileComponent.fxml");
+//        AnchorPane anchorPane = loadComponent.loadAnchor();
+//        RoomProfileComponentController item = loadComponent.loadFxml().getController();
+//        item.setNameLabel(groupName);
+//        item.getPane().setOnMouseClicked(e -> {
+//            try {
+//                chatPage(roomID);
+//            } catch (IOException ioException) {
+//                ioException.printStackTrace();
+//            }
+//        });
+//        grid.add(anchorPane,1,grid.getRowCount()+1);
+//        grid.setLayoutY(grid.getLayoutY()-4);
+//        grid.setLayoutX(-60);
+//
+//    }
+
+
+    LinkedList<Room> groups = new LinkedList<>();
+
+
+    public void createGroup() throws IOException {
+        if (groupName.getText() != null && members.size() != 0){
+            members.add(Users.getCurrentUser().getUsername());
+            Room room = Chats.creatGroupRoom(members,groupName.getText());
+            groups.add(room);
+            members.clear();
+            grid.getChildren().clear();
+            loadData();
+            closeOverlay();
+        }
+    }
+
+    public void loadData() throws IOException {
         LinkedList<Room> tw = Users.getChats().userRoom(Users.getCurrentUser().getUsername());
+        tw.addAll(groups);
         for (int i = 0; i < tw.size(); i++) {
             LoadComponent loadComponent = new LoadComponent("../FXML/roomProfileComponent.fxml");
             AnchorPane anchorPane = loadComponent.loadAnchor();
@@ -31,11 +108,15 @@ public class RoomsController {
                     ioException.printStackTrace();
                 }
             });
-            if (tw.get(i ).getOwner1().equals(Users.getCurrentUser().getUsername())) {
-                itemController.setNameLabel(tw.get(i).getOwner2());
-            } else {
-                itemController.setNameLabel(tw.get(i ).getOwner1());
-
+            if (tw.get(i).getType().equals("pv")) {
+                if (tw.get(i).getOwner1().equals(Users.getCurrentUser().getUsername())) {
+                    itemController.setNameLabel(tw.get(i).getOwner2());
+                } else {
+                    itemController.setNameLabel(tw.get(i).getOwner1());
+                }
+            }
+            else {
+                itemController.setNameLabel(tw.get(i).getGroupName());
             }
             LinkedList<Chat> chat = Users.getChats().showChats(tw.get(i).getRoomID());
             if (chat.size() != 0){
@@ -48,10 +129,17 @@ public class RoomsController {
             grid.setLayoutX(-60);
 //            GridPane.setMargin(anchorPane, new Insets(10));
         }
+        loadFollowers();
     }
 
-    public void chatPage(String id) throws IOException {
-        Chats.setRoomID(id);
-        new ChangeScene("../FXML/chat.fxml",grid);
+    LinkedList<String> members = new LinkedList<>();
+    public void chooseFlwr(FollowerComponentController item,String str){
+        if (item.rect1.isVisible()){
+            item.rect1.setVisible(false);
+            members.remove(str);
+        } else {
+            item.rect1.setVisible(true);
+            members.add(str);
+        }
     }
 }

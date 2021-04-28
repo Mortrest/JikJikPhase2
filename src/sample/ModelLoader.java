@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.lang.reflect.Type;
 import java.time.LocalTime;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -23,61 +24,25 @@ public class ModelLoader {
 
 
 
-    public void saveUser(LinkedList<User> users) {
+    public void save(LinkedList<?> users,String name) {
         try {
-            File file = getUserFile("Users"+".txt");
+            File file = getUserFile(name+".txt");
             assert file != null;
             PrintStream printStream = new PrintStream(file);
             Gson gson = new Gson();
-            for (User us : users) {
+            for (Object us : users) {
                 String jsonInString = gson.toJson(us);
                 printStream.print(jsonInString);
                 printStream.println();
             }
 
             printStream.close();
-            log("ModelLoader-User saved");
+            log("ModelLoader saved");
         } catch (FileNotFoundException e) {
             log("ModelLoader-ERROR Occurred while saving user");
         }
     }
 
-    public void saveRoom(LinkedList<Room> rooms) {
-        try {
-            File file = getUserFile("Rooms"+".txt");
-            assert file != null;
-            PrintStream printStream = new PrintStream(file);
-            Gson gson = new Gson();
-            for (Room us : rooms) {
-                String jsonInString = gson.toJson(us);
-                printStream.print(jsonInString);
-                printStream.println();
-            }
-            printStream.close();
-            log("ModelLoader-Room saved");
-        } catch (FileNotFoundException e) {
-            log("ModelLoader-ERROR Occurred while saving room");
-        }
-    }
-
-    public void saveTweet(LinkedList<Tweet> tweets) {
-        try {
-            File file = getUserFile("Tweets"+".txt");
-            assert file != null;
-            PrintStream printStream = new PrintStream(file);
-            Gson gson = new Gson();
-            for (Tweet us : tweets) {
-                String jsonInString = gson.toJson(us);
-                printStream.print(jsonInString);
-                printStream.println();
-            }
-            log("ModelLoader-Tweet saved");
-
-            printStream.close();
-        } catch (FileNotFoundException e) {
-            log("ModelLoader-ERROR Occurred while saving tweet");
-        }
-    }
     static LinkedList<String> logs = new LinkedList<>();
     public void log(String msg) {
         try {
@@ -96,45 +61,8 @@ public class ModelLoader {
         }
     }
 
-    public void saveChat(LinkedList<Chat> chats) {
-        try {
-            File file = getUserFile("Chats"+".txt");
-            assert file != null;
-            PrintStream printStream = new PrintStream(file);
-            Gson gson = new Gson();
-            for (Chat us : chats) {
-                String jsonInString = gson.toJson(us);
-                printStream.print(jsonInString);
-                printStream.println();
-            }
-            printStream.close();
-            log("ModelLoader-Chat saved");
 
-        } catch (FileNotFoundException e) {
-            log("ModelLoader-ERROR Occurred while saving chats");
-        }
-    }
-
-    public void saveNotif(LinkedList<Notif> notifs) {
-        try {
-            File file = getUserFile("Notifs"+".txt");
-            assert file != null;
-            PrintStream printStream = new PrintStream(file);
-            Gson gson = new Gson();
-            for (Notif us : notifs) {
-                String jsonInString = gson.toJson(us);
-                printStream.print(jsonInString);
-                printStream.println();
-            }
-            log("ModelLoader-Notif saved");
-
-            printStream.close();
-        } catch (FileNotFoundException e) {
-            log("ModelLoader-ERROR Occurred while saving notifs");
-        }
-    }
-
-    public LinkedList<Tweet> loadTweets() {
+     public  LinkedList<Tweet> loadTweets() {
         try {
             File userFile = getUserFile("Tweets.txt");
             if (userFile == null){
@@ -144,7 +72,7 @@ public class ModelLoader {
                 Scanner ss = new Scanner(userFile);
                 LinkedList<Tweet> tweets = new LinkedList<>();
                 while (ss.hasNextLine()) {
-                    Tweet tweet = gson.fromJson(ss.nextLine(), Tweet.class);
+                    Tweet tweet = gson.fromJson(ss.nextLine(),Tweet.class);
                     tweets.add(tweet);
                 }
                 log("ModelLoader-Tweets Loaded");

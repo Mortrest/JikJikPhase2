@@ -20,13 +20,13 @@ public class Notifs {
         Notif notif = new Notif(owner,text,Long.toString(date.getTime()),false,type);
         notifs.add(notif);
         ml.log("Notifs-"+"Notification " + text +" Created");
-        ml.saveNotif(notifs);
+        ml.save(notifs,"Notifs");
     }
 
     public void deleteNotif(Notif notif){
         notifs.remove(notif);
         ml.log("Notifs-"+"Notification " + notif.getText() +" Deleted");
-        ml.saveNotif(notifs);
+        ml.save(notifs,"Notifs");
     }
 
     public void makeRequest(String text,String owner,String type,String owner2){
@@ -34,7 +34,7 @@ public class Notifs {
         Notif notif = new Notif(owner,text,Long.toString(date.getTime()),false,type,owner2);
         notifs.add(notif);
         ml.log("Notifs-"+owner + " Requested to " + owner2);
-        ml.saveNotif(notifs);
+        ml.save(notifs,"Notifs");
     }
 
     // Showing notifs

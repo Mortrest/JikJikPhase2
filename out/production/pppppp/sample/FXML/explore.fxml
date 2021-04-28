@@ -26,14 +26,19 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="841.0">
                             <children>
-                                <Pane layoutX="-4.0" layoutY="10.0" prefHeight="91.0" prefWidth="864.0">
+                                <Pane layoutX="-4.0" layoutY="24.0" prefHeight="77.0" prefWidth="864.0">
                            <children>
-                              <TextField layoutX="212.0" layoutY="26.0" prefHeight="39.0" prefWidth="335.0" promptText="Search Username" />
-                              <Button layoutX="540.0" layoutY="26.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="77.0" style="-fx-background-color: #1DA3F3;" text="Search" textFill="WHITE">
+                              <TextField fx:id="searchArea" layoutX="212.0" layoutY="26.0" prefHeight="39.0" prefWidth="335.0" promptText="Search Username" />
+                              <Button layoutX="540.0" layoutY="26.0" mnemonicParsing="false" onAction="#search" prefHeight="39.0" prefWidth="77.0" style="-fx-background-color: #1DA3F3;" text="Search" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Button>
+                              <Label fx:id="found" layoutX="322.0" layoutY="-12.0" prefHeight="39.0" prefWidth="338.0" text="User not found!" textFill="#ff1919" visible="false">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
                            </children>
                                 </Pane>
                                 <Line endX="858.0" endY="175.0" layoutX="-1.0" layoutY="-58.0" startX="-1.52587890625E-5" startY="175.0" stroke="#d3d3d3" strokeWidth="3.0" />

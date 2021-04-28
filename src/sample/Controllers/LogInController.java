@@ -29,6 +29,10 @@ public class LogInController {
 
 
     public void initialize() {
+        if (Users.getProfile() != Users.getCurrentUser()){
+            currentPage = profilePage;
+            profilePage.setVisible(true);
+        }
         if (Tweets.getTweetID() != null){
             currentPage = eachTweet;
             eachTweet.setVisible(true);

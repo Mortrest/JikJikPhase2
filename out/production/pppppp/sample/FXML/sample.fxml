@@ -172,12 +172,10 @@
       </AnchorPane>
 
 
-
-
-
       <AnchorPane fx:id="explorePage" layoutX="212.0" layoutY="-1.0" prefHeight="673.0" prefWidth="858.0" visible="false">
          <fx:include source="explore.fxml" />
       </AnchorPane>
+
 
       <AnchorPane fx:id="chatPage" layoutX="212.0" layoutY="-1.0" prefHeight="673.0" prefWidth="858.0" visible="false">
          <fx:include source="rooms.fxml" />

@@ -1,10 +1,15 @@
 package sample.Models;
 
+import java.util.LinkedList;
+
 public class Room {
     private final String roomID;
     private final String date;
     private final String owner1;
     private final String owner2;
+    private final LinkedList<String> members;
+    private final String type;
+    private final String groupName;
     protected int unread1;
     protected int unread2;
 
@@ -15,7 +20,18 @@ public class Room {
         this.owner2 = owner2;
         this.unread1 = unread1;
         this.unread2 = unread2;
-
+        this.members = null;
+        this.type = "pv";
+        this.groupName = null;
+    }
+    public Room(String roomID,String date,LinkedList<String> members,String groupName){
+        this.roomID = roomID;
+        this.date = date;
+        this.members = members;
+        this.owner1 = null;
+        this.owner2 = null;
+        this.groupName = groupName;
+        this.type = "gp";
     }
 
     public String getRoomID() {
@@ -28,6 +44,10 @@ public class Room {
 
     public int getUnread1() {
         return unread1;
+    }
+
+    public LinkedList<String> getMembers() {
+        return members;
     }
 
     public void setUnread1(int unread1) {
@@ -48,5 +68,13 @@ public class Room {
 
     public String getDate() {
         return date;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getGroupName() {
+        return groupName;
     }
 }

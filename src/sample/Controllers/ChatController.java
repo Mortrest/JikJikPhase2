@@ -25,7 +25,7 @@ public class ChatController {
     @FXML
     private DialogPane overlay;
     @FXML
-    private Button backBtn, submit,closeBtn;
+    private Button backBtn, submit, closeBtn;
     @FXML
     private GridPane grid;
     @FXML
@@ -61,13 +61,13 @@ public class ChatController {
         Label text = item.getText();
         Label name = item.getName();
         text.setLayoutX(text.getLayoutX() + 700);
-        if (text.getLayoutX() + text.getText().length()*4 > 878){
+        if (text.getLayoutX() + text.getText().length() * 4 > 878) {
             int len = text.getText().length() - "salam iman".length();
-            text.setLayoutX(text.getLayoutX() - len*4 - 10);
+            text.setLayoutX(text.getLayoutX() - len * 4 - 10);
         }
-        if (text.getLayoutX() + text.getText().length()*4 < 878){
+        if (text.getLayoutX() + text.getText().length() * 4 < 878) {
             int len = text.getText().length() - "salam iman".length();
-            text.setLayoutX(text.getLayoutX() - len*4 + 10);
+            text.setLayoutX(text.getLayoutX() - len * 4 + 10);
         }
         name.setLayoutX(name.getLayoutX() + 700);
         grid.add(anchorPane, 1, grid.getRowCount() + 1);
@@ -116,10 +116,12 @@ public class ChatController {
             } else {
                 grid.add(anchorPane, 1, grid.getRowCount() + 1);
                 grid.setLayoutX(-40);
+                grid.setLayoutY(20);
             }
             GridPane.setMargin(anchorPane, new Insets(-15));
         }
     }
+
 
     public void delete(String ID) throws IOException {
         Chats.deleteChat(ID);
@@ -132,13 +134,14 @@ public class ChatController {
         overlay.setVisible(true);
     }
 
+
     public void editBtn() throws IOException {
-        Chats.editChat(Chats.getEditID(),overlayText.getText());
+        Chats.editChat(Chats.getEditID(), overlayText.getText());
         closeOverlay();
         loadData();
     }
 
-    public void closeOverlay(){
+    public void closeOverlay() {
         overlay.setVisible(false);
         overlayText.setText("");
         Chats.setEditID(null);

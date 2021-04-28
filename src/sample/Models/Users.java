@@ -61,7 +61,7 @@ public class Users {
     }
 
     public void save(){
-        ml.saveUser(users);
+        ml.save(users,"Users");
     }
 
     // Username reservation for sign up
@@ -78,7 +78,7 @@ public class Users {
     public void signUp(User user){
         users.add(user);
         chats.createSavedMsg(user.getUsername());
-        ml.saveUser(users);
+        ml.save(users,"Users");
     }
 
     // Following profiles
@@ -88,7 +88,7 @@ public class Users {
             searchUsername(target).getFollowers().add(user.getUsername());
             tweets.follow(user.getUsername(), target);
             notifs.makeNotif((user.getUsername() + " Started following you!"), target, "1");
-            ml.saveUser(users);
+            ml.save(users,"Users");
         }
     }
 
@@ -98,7 +98,7 @@ public class Users {
         tweets.unfollow(user.getUsername(),target);
         notifs.makeNotif((user.getUsername() + " Stopped following you!"),target,"1");
 
-        ml.saveUser(users);
+        ml.save(users,"Users");
     }
 
     // Blocking profiles
@@ -113,7 +113,7 @@ public class Users {
         if (!user.getMuted().contains(target)){
             user.getMuted().add(target);
         }
-        ml.saveUser(users);
+        ml.save(users,"Users");
     }
 
     public void muteProfile(User user, String target){
@@ -124,7 +124,7 @@ public class Users {
             user.getMuted().add(target);
             ml.log("Users-"+user.getUsername() + " Muted " + target );
         }
-        ml.saveUser(users);
+        ml.save(users,"Users");
     }
 
     // Sign in user
@@ -148,7 +148,7 @@ public class Users {
                 break;
             }
         }
-        ml.saveUser(users);
+        ml.save(users,"Users");
     }
 
     public void createCatg(User user, String name){
@@ -156,7 +156,7 @@ public class Users {
         n.add(name);
         user.getCategories().add(n);
         ml.log("Users-"+"Category " + name + " Created");
-        ml.saveUser(users);
+        ml.save(users,"Users");
     }
 
     // Searching with ID
@@ -180,19 +180,19 @@ public class Users {
             us.remove(user.getUsername());
         }
         users.remove(user);
-        ml.saveUser(users);
+        ml.save(users,"Users");
         tweets.deleteProfile(user);
         chats.rooms.removeIf(room -> room.getOwner2().equals(user.getUsername()) || room.getOwner1().equals(user.getUsername()));
-        ml.saveChat(chats.chats);
+        ml.save(chats.chats,"Chats");
         notifs.notifs.removeIf(notif -> notif.getOwner().equals(user.getUsername()));
-        ml.saveNotif(notifs.notifs);
+        ml.save(notifs.notifs,"Notifs");
         ml.log("Users-"+user.getUsername() + " Profile deleted");
     }
 
 
     public static void deactivate(User user){
         user.setActive(false);
-        ml.saveUser(users);
+        ml.save(users,"Users");
     }
     // Making tweet
     public static void makeTweet(User userf,String textf){

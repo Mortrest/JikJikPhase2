@@ -3,14 +3,12 @@ package sample.Controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
+import javafx.scene.layout.Pane;
 import sample.Models.Tweet;
 import sample.Models.Tweets;
 import sample.Models.User;
@@ -33,6 +31,12 @@ public class eachTweetController {
     private TextArea textArea;
     @FXML
     private Button backBtn;
+    @FXML
+    private TextArea overlayText;
+    @FXML
+    private Pane overlay;
+
+
     public void initialize() throws IOException {
         LinkedList<Tweet> tw = Users.getTweets().getComments(Tweets.getTweetID());
         if (Tweets.getTweetID() != null) {
@@ -73,5 +77,18 @@ public class eachTweetController {
             Tweets.setTweetID(Tweets.search(Tweets.getTweetID()).getParent());
         }
         new ChangeScene("../FXML/sample.fxml",grid);
+    }
+
+
+
+    public void closeOverlay(){
+        overlay.setVisible(false);
+    }
+
+    public void sendComment() throws IOException {
+        if (overlayText.getText() != null){
+            overlay.setVisible(false);
+            Tweets.makeTweet(overlayText.getText(),Tweets.getComment(),Users.getCurrentUser().getUsername(),Users.getCurrentUser().getFollowers());
+        }
     }
 }
