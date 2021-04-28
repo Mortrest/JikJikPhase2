@@ -51,6 +51,7 @@ public class RoomsController {
         Chats.setRoomID(id);
         new ChangeScene("../FXML/chat.fxml",grid);
     }
+
     public void closeOverlay(){
         overlay.setVisible(false);
     }
@@ -58,25 +59,6 @@ public class RoomsController {
     public void openOverlay(){
         overlay.setVisible(true);
     }
-
-//    public void newRoom(String groupName,String roomID) throws IOException {
-//        LoadComponent loadComponent = new LoadComponent("../FXML/roomProfileComponent.fxml");
-//        AnchorPane anchorPane = loadComponent.loadAnchor();
-//        RoomProfileComponentController item = loadComponent.loadFxml().getController();
-//        item.setNameLabel(groupName);
-//        item.getPane().setOnMouseClicked(e -> {
-//            try {
-//                chatPage(roomID);
-//            } catch (IOException ioException) {
-//                ioException.printStackTrace();
-//            }
-//        });
-//        grid.add(anchorPane,1,grid.getRowCount()+1);
-//        grid.setLayoutY(grid.getLayoutY()-4);
-//        grid.setLayoutX(-60);
-//
-//    }
-
 
     LinkedList<Room> groups = new LinkedList<>();
 

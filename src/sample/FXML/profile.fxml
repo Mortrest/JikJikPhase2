@@ -48,15 +48,21 @@
                                     <Font name="Comic Sans MS Bold Italic" size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="294.0" layoutY="43.0" opacity="0.74" prefHeight="48.0" prefWidth="114.0" text="Followers">
+                              <Label fx:id="followersLabel" layoutX="294.0" layoutY="43.0" onMouseClicked="#followersOverlay" opacity="0.74" prefHeight="48.0" prefWidth="114.0" text="Followers">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Label>
-                              <Label layoutX="479.0" layoutY="43.0" opacity="0.74" prefHeight="48.0" prefWidth="114.0" text="Followings">
+                              <Label fx:id="followingsLabel" layoutX="479.0" layoutY="43.0" onMouseClicked="#followingsOverlay" opacity="0.74" prefHeight="48.0" prefWidth="114.0" text="Followings">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Label>
                               <Label fx:id="flwrsCount" layoutX="264.0" layoutY="43.0" prefHeight="48.0" prefWidth="51.0" text="24">
                                  <font>
@@ -68,16 +74,24 @@
                                     <Font name="System Bold Italic" size="20.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="followBtn" layoutX="638.0" layoutY="48.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: #1DA3F3;" text="Follow" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font></Button>
                               <ComboBox layoutX="731.0" layoutY="48.0" prefHeight="39.0" prefWidth="78.0" promptText="More" style="-fx-background-color: #f54787;" visibleRowCount="4" />
                               <Label fx:id="isFollowing" layoutX="264.0" layoutY="10.0" prefHeight="33.0" prefWidth="313.0" text="You're not following him" textFill="#9a9797">
                                  <font>
                                     <Font name="System Bold Italic" size="15.0" />
                                  </font>
                               </Label>
+                              <Button fx:id="blackBtn" layoutX="638.0" layoutY="48.0" mnemonicParsing="false" onAction="#blackOverlay" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: BLACK;" text="Blacklist" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="followBtn" layoutX="638.0" layoutY="48.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: #1DA3F3;" text="Follow" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
                            </children>
                         </Pane>
                         <AnchorPane layoutX="-1.0" layoutY="135.0" prefHeight="489.0" prefWidth="858.0">
@@ -93,6 +107,34 @@
                            </children>
                         </AnchorPane>
                         <Line endX="92.49998474121094" endY="185.0" layoutY="-53.0" startX="-1.52587890625E-5" startY="185.0" />
+                        <Pane fx:id="overlay1" layoutX="178.0" layoutY="73.0" prefHeight="402.0" prefWidth="541.0" style="-fx-background-color: #F9F9F9; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: BLACK;" visible="false">
+                           <children>
+                              <Button fx:id="closeOverlay" layoutX="496.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeOverlay" style="-fx-background-radius: 10; -fx-background-color: #f23a71;" text="X" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ScrollPane hbarPolicy="NEVER" layoutX="9.0" layoutY="71.0" prefHeight="317.0" prefWidth="516.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+                                 <content>
+                                    <AnchorPane style="-fx-background-color: #F9F9F9;">
+                                       <children>
+                                          <GridPane fx:id="overlayGrid">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </Pane>
                      </children>
                   </AnchorPane>
                </content>
