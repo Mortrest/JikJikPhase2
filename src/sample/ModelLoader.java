@@ -46,7 +46,6 @@ public class ModelLoader {
     static LinkedList<String> logs = new LinkedList<>();
     public void log(String msg) {
         try {
-
             File file = getUserFile("Log"+".txt");
             assert file != null;
             PrintStream printStream = new PrintStream(file);
@@ -57,7 +56,6 @@ public class ModelLoader {
             printStream.close();
         } catch (FileNotFoundException e) {
             System.out.println(e);
-
         }
     }
 

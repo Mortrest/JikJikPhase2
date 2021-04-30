@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalDependencies">
+    <plugin id="com.berzanmikaili.intellij.monokai_pro" max-version="1.1" />
+    <plugin id="monokai-pro" max-version="1.1" />
+  </component>
+</project>

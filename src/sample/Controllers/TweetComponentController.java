@@ -4,8 +4,10 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 import sample.Models.Tweets;
 import sample.Models.Users;
+import java.io.IOException;
 
 public class TweetComponentController {
     @FXML
@@ -20,7 +22,8 @@ public class TweetComponentController {
     private Label likeCount,commentCount;
     @FXML
     private Pane idPane;
-
+    @FXML
+    private Circle profilePic;
     @FXML
     private Label nameLabel;
 
@@ -32,9 +35,11 @@ public class TweetComponentController {
     public void setNameLabel(String str){
         nameLabel.setText(str);
     }
+
     public void setTweetLabel(String str){
         tweetLabel.setText(str);
     }
+
     public String getTweetID() {
         return TweetID;
     }
@@ -70,6 +75,7 @@ public class TweetComponentController {
     public Label getLikeCount() {
         return likeCount;
     }
+
     public Label getCommentCount() {
         return commentCount;
     }
@@ -78,7 +84,7 @@ public class TweetComponentController {
         this.likeCount = likeCount;
     }
 
-    public void likeTweet(){
+    public void likeTweet() throws IOException {
         int likeCo = Integer.parseInt(likeCount.getText());
         if (liked.isVisible()){
             liked.setVisible(false);
@@ -91,6 +97,7 @@ public class TweetComponentController {
         Tweets.likeTweet(Users.getCurrentUser(),Tweets.search(TweetID));
     }
 
-
-
+    public Circle getProfilePic() {
+        return profilePic;
+    }
 }

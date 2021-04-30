@@ -74,6 +74,8 @@ public class Users {
         return true;
     }
 
+
+
     // Sign up user
     public void signUp(User user){
         users.add(user);

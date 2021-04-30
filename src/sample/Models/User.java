@@ -31,11 +31,13 @@ public class User {
     protected boolean isPrivate;
     protected boolean isLastSeenAvailable;
     boolean isActive;
+    protected String profilePic;
     public String getPassword() {
         return password;
     }
 
-    public User(String ID, String firstName, String lastName, String username, String password, String info, LocalDateTime lastSeen, LinkedList<String> followers,LinkedList<String>following,LinkedList<String> blackList,LinkedList<String> muted, LinkedList<LinkedList<String>> categories,boolean isLastSeenAvailable, boolean isPrivate, boolean isActive, String phoneNumber,String email,String birthdate) {
+    public User(String ID, String firstName, String lastName, String username, String password, String info, LocalDateTime lastSeen, LinkedList<String> followers,LinkedList<String>following,LinkedList<String> blackList,LinkedList<String> muted, LinkedList<LinkedList<String>> categories,boolean isLastSeenAvailable, boolean isPrivate, boolean isActive, String phoneNumber,String email,String birthdate
+        ,String profilePic) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -54,10 +56,11 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.birthdate = birthdate;
         this.isLastSeenAvailable = isLastSeenAvailable;
+        this.profilePic = profilePic;
     }
 
 
-    public User(String ID, String firstName, String lastName, String username, String password, String info, String phoneNumber,String email,String birthdate) {
+    public User(String ID, String firstName, String lastName, String username, String password, String info, String phoneNumber,String email,String birthdate,String profilePic) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -73,6 +76,7 @@ public class User {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.birthdate = birthdate;
+        this.profilePic = profilePic;
         isPrivate = false;
         isActive = true;
         lastSeen = LocalDateTime.now();
@@ -95,6 +99,14 @@ public class User {
 
     public LinkedList<String> getMuted() {
         return muted;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
     }
 
     public boolean isActive() {
@@ -127,6 +139,14 @@ public class User {
 
     public String getInfo() {
         return info;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public LocalDateTime getLastSeen() {

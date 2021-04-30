@@ -14,7 +14,7 @@
    <children>
       <Pane layoutX="5.0" layoutY="9.0" prefHeight="144.0" prefWidth="778.0" style="-fx-background-color: #ededed; -fx-background-radius: 15;">
          <children>
-            <Circle fill="#45f7c2" layoutX="53.0" layoutY="46.0" radius="32.0" stroke="#50e8e5" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="profilePic" fill="#45f7c2" layoutX="53.0" layoutY="46.0" radius="32.0" stroke="#50e8e5" strokeType="INSIDE" strokeWidth="0.0" />
             <Label fx:id="nameLabel" layoutX="100.0" layoutY="3.0" text="\@Mortrest - Ali Falahati ">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -31,7 +31,7 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <FontAwesomeIconView fx:id="like" onMouseClicked="#likeTweet" fill="#7c7c7c" glyphName="HEART" layoutX="310.0" layoutY="130.0" size="20" wrappingWidth="33.0">
+            <FontAwesomeIconView fx:id="like" fill="#7c7c7c" glyphName="HEART" layoutX="310.0" layoutY="130.0" onMouseClicked="#likeTweet" size="20" wrappingWidth="33.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></FontAwesomeIconView>
@@ -77,7 +77,7 @@
          </cursor>
       </Pane>
       <Line endX="737.0" endY="141.85711669921875" startX="715.0" startY="127.0" stroke="#757575" strokeWidth="2.0" />
-      <FontAwesomeIconView fx:id="liked" onMouseClicked="#likeTweet" fill="#ff4f81" glyphName="HEART" layoutX="315.0" layoutY="139.0" size="20" visible="false" wrappingWidth="33.0">
+      <FontAwesomeIconView fx:id="liked" fill="#ff4f81" glyphName="HEART" layoutX="315.0" layoutY="139.0" onMouseClicked="#likeTweet" size="20" visible="false" wrappingWidth="33.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

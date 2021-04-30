@@ -3,10 +3,14 @@ package sample.Controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import sample.Models.Tweets;
 import sample.Models.Users;
 import sample.utils.TweetLoad;
@@ -17,11 +21,20 @@ public class HomePageController {
     @FXML
     public GridPane grid;
     @FXML
+    public Label nameLabel;
+    @FXML
+    public Circle proPic;
+    @FXML
     private TextArea textArea,overlayText;
     @FXML
     private Pane overlay;
 
     public void initialize() throws IOException {
+        if (Users.getCurrentUser().getProfilePic() != null){
+            Image image = new Image(Users.getCurrentUser().getProfilePic());
+            proPic.setFill(new ImagePattern(image));
+        }
+        nameLabel.setText("@" + Users.getCurrentUser().getUsername() + " - " + Users.getCurrentUser().getName());
         loadData();
     }
 

@@ -5,16 +5,18 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import sample.Models.Tweets;
 import sample.Models.User;
 import sample.Models.Users;
 import sample.utils.ChangeScene;
 import sample.utils.LoadComponent;
 import sample.utils.TweetLoad;
-
 import java.io.IOException;
 import java.util.LinkedList;
 
@@ -22,6 +24,14 @@ public class ProfileController {
     @FXML
     public Label followersLabel,followingsLabel;
     public GridPane overlayGrid;
+    @FXML
+    public Circle profilePic;
+    @FXML
+    public AnchorPane editPage;
+    @FXML
+    public AnchorPane Salam;
+    @FXML
+    public AnchorPane profilePage;
     @FXML
     private Label fNames;
 
@@ -61,6 +71,8 @@ public class ProfileController {
             bio.setText("No bio");
         }
         fNames.setText(user.getFirstName() + " " + user.getLastName());
+        Image image = new Image("/sample/images/ali.PNG");
+        profilePic.setFill(new ImagePattern(image));
         flwrsCount.setText(Integer.toString(user.getFollowers().size()));
         flwingCount.setText(Integer.toString(user.getFollowing().size()));
         if (user.getUsername().equals(Users.getCurrentUser().getUsername())){
@@ -105,6 +117,11 @@ public class ProfileController {
             grid.getChildren().clear();
             loadData();
         }
+    }
+
+    public void editProfile(){
+        editPage.setVisible(true);
+//        Salam.setVisible(false);
     }
 
     public void followersOverlay() throws IOException {

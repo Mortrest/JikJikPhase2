@@ -44,7 +44,7 @@ public class LogInController {
             chatPage.setVisible(true);
             System.out.println("no");
         } else {
-            currentPage = homePage;
+            currentPage = profilePage;
         }
     }
 

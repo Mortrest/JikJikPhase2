@@ -3,14 +3,15 @@ package sample.utils;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
 import sample.Controllers.TweetComponentController;
 import sample.Models.Tweet;
 import sample.Models.Tweets;
 import sample.Models.Users;
-
 import java.io.IOException;
 import java.util.LinkedList;
 
@@ -33,6 +34,7 @@ public class TweetLoad {
             fxmlLoader.setLocation(getClass().getResource("../FXML/TweetComponent.fxml"));
             AnchorPane anchorPane = fxmlLoader.load();
             TweetComponentController itemController = fxmlLoader.getController();
+            itemController.getProfilePic().setFill(new ImagePattern(new Image("/sample/images/iman.JPG")));
             int finalI = i-1;
             itemController.setTweetID(tw.get(i-1).getID());
             itemController.getLikeCount().setText(Integer.toString(tw.get(i-1).getLikes().size()));

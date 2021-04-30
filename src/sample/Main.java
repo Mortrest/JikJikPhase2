@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import sample.Models.Chats;
 import sample.Models.Notifs;
@@ -20,7 +21,8 @@ public class Main extends Application {
         Users users = new Users(m,tweets,chats,notifs);
 
         Parent root = FXMLLoader.load(getClass().getResource("FXML/SignIn.fxml"));
-        primaryStage.setTitle("JikJik");
+        primaryStage.setTitle("Jik Jik");
+        primaryStage.getIcons().add(new Image("/sample/FXML/download.jpg"));
         primaryStage.setScene(new Scene(root, 1069, 673));
         primaryStage.show();
 
