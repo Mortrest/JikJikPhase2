@@ -33,7 +33,7 @@
                                  <children>
                                     <Pane layoutX="5.0" layoutY="9.0" prefHeight="144.0" prefWidth="778.0" style="-fx-background-radius: 15;">
                                        <children>
-                                          <Circle fill="#45f7c2" layoutX="53.0" layoutY="46.0" radius="32.0" stroke="#50e8e5" strokeType="INSIDE" strokeWidth="0.0" />
+                                          <Circle fx:id="proPic" fill="#45f7c2" layoutX="53.0" layoutY="46.0" radius="32.0" stroke="#50e8e5" strokeType="INSIDE" strokeWidth="0.0" />
                                           <Label fx:id="nameLabel" layoutX="100.0" layoutY="3.0" text="\@Mortrest - Ali Falahati ">
                                              <font>
                                                 <Font name="System Bold" size="14.0" />
