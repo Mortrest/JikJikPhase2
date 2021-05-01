@@ -1,7 +1,5 @@
-22:1:56 - ModelLoader-Tweets Loaded
-22:1:56 - ModelLoader-Notifs Loaded
-22:1:56 - ModelLoader-Rooms Loaded
-22:1:56 - ModelLoader-Chats Loaded
-22:1:56 - ModelLoader-Users Loaded
-22:3:32 - Tweets-morty Unliked Tweet ID 48787
-22:3:32 - ModelLoader saved
+22:6:7 - ModelLoader-Tweets Loaded
+22:6:7 - ModelLoader-Notifs Loaded
+22:6:7 - ModelLoader-Rooms Loaded
+22:6:7 - ModelLoader-Chats Loaded
+22:6:7 - ModelLoader-Users Loaded

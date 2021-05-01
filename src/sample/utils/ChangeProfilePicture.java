@@ -1,15 +1,18 @@
 package sample.utils;
 
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import sample.Models.Tweets;
 import sample.Models.User;
 import sample.Models.Users;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Random;
 
 public class ChangeProfilePicture {
     public ChangeProfilePicture(TextField idPane) throws IOException {
@@ -19,5 +22,15 @@ public class ChangeProfilePicture {
         File file1 = new File("C:\\Users\\ali80\\Desktop\\Tokyo\\Phase2\\src\\sample\\images\\" + Users.getCurrentUser().getUsername() + ".jpg");
         Files.copy(file.toPath(),file1.toPath());
         Users.getCurrentUser().setProfilePic(file1.toString());
+    }
+
+    public ChangeProfilePicture(TextArea idPane) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        Stage window = (Stage) idPane.getScene().getWindow();
+        File file = fileChooser.showOpenDialog(window);
+        Random random = new Random();
+        File file1 = new File("C:\\Users\\ali80\\Desktop\\Tokyo\\Phase2\\src\\sample\\images\\" + random.nextInt(10000) + ".jpg");
+        Files.copy(file.toPath(),file1.toPath());
+        Tweets.setImage(file1.toPath().toString());
     }
 }

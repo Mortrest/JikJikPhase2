@@ -167,7 +167,7 @@
 
 
 
-      <AnchorPane fx:id="homePage" layoutX="212.0" layoutY="-1.0" prefHeight="673.0" prefWidth="858.0" visible="false">
+      <AnchorPane fx:id="homePage" layoutX="212.0" layoutY="-1.0" prefHeight="673.0" prefWidth="858.0" visible="true">
          <fx:include source="home.fxml" />
       </AnchorPane>
 
@@ -198,7 +198,7 @@
          <fx:include source="settings.fxml" />
       </AnchorPane>
 
-      <AnchorPane fx:id="profilePage" layoutX="212.0" layoutY="-1.0" prefHeight="666.0" prefWidth="858.0" visible="true">
+      <AnchorPane fx:id="profilePage" layoutX="212.0" layoutY="-1.0" prefHeight="666.0" prefWidth="858.0" visible="false">
          <fx:include source="profile.fxml" />
       </AnchorPane>
 

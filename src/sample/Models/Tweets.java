@@ -14,15 +14,21 @@ public class Tweets {
     static String comment;
     static LinkedList<Tweet> tweets;
     static ModelLoader ml;
-
+    static String image;
     static String tweetID;
 
     public Tweets(ModelLoader modelLoader) {
         tweets = modelLoader.loadTweets();
-
         this.ml = modelLoader;
     }
 
+    public static String getImage() {
+        return image;
+    }
+
+    public static void setImage(String image) {
+        Tweets.image = image;
+    }
 
     public static String getComment() {
         return comment;
@@ -39,6 +45,7 @@ public class Tweets {
     public static void setTweetID(String tweetID) {
         Tweets.tweetID = tweetID;
     }
+
 
 
     public LinkedList<Tweet> getComments(String tweetID) {
@@ -60,6 +67,16 @@ public class Tweets {
             }
         }
         return null;
+    }
+
+    public static void makeTweetImage(String text,String image, String parent, String owner, LinkedList<String> followers) {
+        Date date = new Date();
+        LinkedList<String> str2 = new LinkedList<>();
+        Random random = new Random();
+        Tweet tweet = new Tweet(Integer.toString(random.nextInt(100000)), text,parent, followers, Long.toString(date.getTime()), str2, owner, false,image);
+        tweets.add(tweet);
+        ml.log("Tweets-"+"Tweet Created " + text);
+        ml.save(tweets,"Tweets");
     }
 
     // Making Tweets

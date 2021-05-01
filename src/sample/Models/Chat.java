@@ -6,6 +6,7 @@ public class Chat {
     String text;
     private final String date;
     private final String owner;
+    private final String image;
     boolean edited;
     boolean forwarded;
 
@@ -17,6 +18,19 @@ public class Chat {
         this.owner = owner;
         this.edited = edited;
         this.forwarded = forwarded;
+        this.image = null;
+
+    }
+
+    public Chat(String ID,String roomID, String text, String date, String owner,boolean edited,boolean forwarded,String image){
+        this.ID = ID;
+        this.roomID = roomID;
+        this.text = text;
+        this.date = date;
+        this.owner = owner;
+        this.edited = edited;
+        this.forwarded = forwarded;
+        this.image = image;
     }
     public String getID(){
         return ID;
@@ -37,5 +51,9 @@ public class Chat {
 
     public String getDate() {
         return date;
+    }
+
+    public String getImage() {
+        return image;
     }
 }

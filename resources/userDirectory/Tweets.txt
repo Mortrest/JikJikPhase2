@@ -1,13 +1,13 @@
-{"text":"How\u0027s today","ID":"48787","parent":"0","owner":"morty","users":["jojo","jojo"],"date":"1616602437718","likes":["morty"],"isRet":false}
-{"text":"How\u0027s today","ID":"2","parent":"0","owner":"morty","users":["jojo","jojo"],"date":"1616602706158","likes":[],"isRet":true}
-{"text":"Heeeey world","ID":"21731","parent":"0","owner":"morty","users":["jojo","jojo"],"date":"1616659033454","likes":[],"isRet":false}
-{"text":"Dickam dahane iman","ID":"217312","parent":"0","owner":"morty","users":["jojo","jojo"],"date":"1616659033454","likes":[],"isRet":false}
-{"text":"Khob ke chi?","ID":"71946","parent":"21731","owner":"morty","users":["jojo","jojo"],"date":"1616827205471","likes":[],"isRet":false}
-{"text":"heh?","ID":"719462","parent":"71946","owner":"morty","users":["jojo","jojo"],"date":"1616827205471","likes":[],"isRet":false}
-{"text":"Khosh behalet","ID":"65910","parent":"21731","owner":"morty","users":["jojo","jojo"],"date":"1616827218101","likes":[],"isRet":false}
-{"text":"Hichi dawsh rahat bash","ID":"39368","parent":"71946","owner":"morty","users":["jojo","jojo"],"date":"1616827228491","likes":[],"isRet":false}
-{"text":"Heeeey world","ID":"9","parent":"0","owner":"morty","users":["jojo","Mojo","gojo"],"date":"1619495907454","likes":[],"isRet":true}
-{"text":"Dickam dahane iman","ID":"10","parent":"0","owner":"morty","users":["jojo","Mojo","gojo"],"date":"1619496086479","likes":[],"isRet":true}
-{"text":"How\u0027s today","ID":"11","parent":"0","owner":"morty","users":["jojo","Mojo","gojo"],"date":"1619496140319","likes":[],"isRet":true}
-{"text":"joooooon","ID":"59282","parent":"217312","owner":"morty","users":["jojo","Mojo","gojo"],"date":"1619500389573","likes":[],"isRet":false}
-{"text":"How\u0027s today","ID":"13","parent":"0","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"date":"1619680706220","likes":[],"isRet":true}
+{"text":"How\u0027s today","ID":"48787","parent":"0","date":"1616602437718","owner":"morty","users":["jojo","jojo"],"likes":["morty"],"isRet":false}
+{"text":"Heeeey world","ID":"21731","parent":"0","date":"1616659033454","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Dickam dahane iman","ID":"217312","parent":"0","date":"1616659033454","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Khob ke chi?","ID":"71946","parent":"21731","date":"1616827205471","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"heh?","ID":"719462","parent":"71946","date":"1616827205471","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Khosh behalet","ID":"65910","parent":"21731","date":"1616827218101","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Hichi dawsh rahat bash","ID":"39368","parent":"71946","date":"1616827228491","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Heeeey world","ID":"9","parent":"0","date":"1619495907454","owner":"morty","users":["jojo","Mojo","gojo"],"likes":[],"isRet":true}
+{"text":"Dickam dahane iman","ID":"10","parent":"0","date":"1619496086479","owner":"morty","users":["jojo","Mojo","gojo"],"likes":[],"isRet":true}
+{"text":"joooooon","ID":"59282","parent":"217312","date":"1619500389573","owner":"morty","users":["jojo","Mojo","gojo"],"likes":[],"isRet":false}
+{"text":"awd","ID":"48536","parent":"0","image":"file:/C:/Users/ali80/Desktop/Tokyo/Phase2/src/sample/images/4399.jpg","date":"1619889984189","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"Mano Erfan","ID":"57652","parent":"0","image":"file:/C:/Users/ali80/Desktop/Tokyo/Phase2/src/sample/images/1465.jpg","date":"1619890089590","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"ggg","ID":"65359","parent":"0","date":"1619890178654","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}

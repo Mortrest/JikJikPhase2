@@ -52,6 +52,11 @@
                                                 <Font name="System Bold" size="13.0" />
                                              </font>
                                           </Button>
+                                          <Button layoutX="589.0" layoutY="98.0" mnemonicParsing="false" onAction="#attach" style="-fx-background-color: #f23a71;" text="Attach" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Button>
                                        </children>
                                     </Pane>
                                  </children>
@@ -72,7 +77,7 @@
                   </AnchorPane>
                </content>
             </ScrollPane>
-            <Pane fx:id="overlay" visible="false" layoutX="222.0" layoutY="96.0" prefHeight="307.0" prefWidth="418.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: BLACK;">
+            <Pane fx:id="overlay" layoutX="222.0" layoutY="96.0" prefHeight="307.0" prefWidth="418.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: BLACK;" visible="false">
                <children>
                   <Button layoutX="367.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeOverlay" prefHeight="25.0" prefWidth="29.0" style="-fx-background-color: #f23a71;" text="X" textFill="WHITE">
                      <font>

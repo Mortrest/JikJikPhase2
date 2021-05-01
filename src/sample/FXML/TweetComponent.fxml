@@ -15,20 +15,20 @@
       <Pane layoutX="5.0" layoutY="9.0" prefHeight="144.0" prefWidth="778.0" style="-fx-background-color: #ededed; -fx-background-radius: 15;">
          <children>
             <Circle fx:id="profilePic" fill="#45f7c2" layoutX="53.0" layoutY="46.0" radius="32.0" stroke="#50e8e5" strokeType="INSIDE" strokeWidth="0.0" />
-            <Label fx:id="nameLabel" layoutX="100.0" layoutY="3.0" text="\@Mortrest - Ali Falahati ">
+            <Label fx:id="nameLabel" layoutX="100.0" layoutY="3.0" opacity="0.61" text="\@Mortrest - Ali Falahati ">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold Italic" size="15.0" />
                </font>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </Label>
-            <Label fx:id="tweetLabel" layoutX="100.0" layoutY="23.0" opacity="0.99" prefHeight="75.0" prefWidth="586.0" text="Salam hamegi chetorid doostasn" textFill="#464646">
+            <Label fx:id="tweetLabel" layoutX="100.0" layoutY="23.0" prefHeight="75.0" prefWidth="586.0" text="Salam hamegi chetorid doostasn" textFill="#464646">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
             <FontAwesomeIconView fx:id="like" fill="#7c7c7c" glyphName="HEART" layoutX="310.0" layoutY="130.0" onMouseClicked="#likeTweet" size="20" wrappingWidth="33.0">

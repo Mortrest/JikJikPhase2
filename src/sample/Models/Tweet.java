@@ -6,10 +6,11 @@ public class Tweet {
     private final String text;
     private final String ID;
     private final String parent;
+    private final String image;
+    private final String date;
     String owner;
     LinkedList<String> users;
 //    Date date;
-    private final String date;
     LinkedList<String> likes;
     boolean isRet;
 
@@ -30,6 +31,19 @@ public class Tweet {
         this.owner = owner;
         this.likes = likes;
         this.isRet = isRet;
+        this.image = null;
+    }
+
+    public Tweet(String ID, String text,String parent, LinkedList<String > users, String date, LinkedList<String> likes, String owner,boolean isRet,String image) {
+        this.ID = ID;
+        this.text = text;
+        this.parent = parent;
+        this.users = users;
+        this.date = date;
+        this.owner = owner;
+        this.likes = likes;
+        this.isRet = isRet;
+        this.image = image;
     }
 
     public String getParent() {
@@ -62,5 +76,9 @@ public class Tweet {
 
     public LinkedList<String> getUsers() {
         return users;
+    }
+
+    public String getImage() {
+        return image;
     }
 }

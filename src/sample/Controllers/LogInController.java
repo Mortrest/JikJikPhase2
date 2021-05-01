@@ -37,14 +37,12 @@ public class LogInController {
             currentPage = eachTweet;
             eachTweet.setVisible(true);
         }
-
-
         if (Chats.getRoomID() != null){
             currentPage = chatPage;
             chatPage.setVisible(true);
             System.out.println("no");
         } else {
-            currentPage = profilePage;
+            currentPage = homePage;
         }
     }
 
