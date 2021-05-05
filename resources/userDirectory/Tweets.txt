@@ -11,3 +11,5 @@
 {"text":"awd","ID":"48536","parent":"0","image":"file:/C:/Users/ali80/Desktop/Tokyo/Phase2/src/sample/images/4399.jpg","date":"1619889984189","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
 {"text":"Mano Erfan","ID":"57652","parent":"0","image":"file:/C:/Users/ali80/Desktop/Tokyo/Phase2/src/sample/images/1465.jpg","date":"1619890089590","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
 {"text":"ggg","ID":"65359","parent":"0","date":"1619890178654","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"Che ruze zibayi bah bah","ID":"31904","parent":"48787","date":"1620199536408","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"Booooo!!!","ID":"64455","parent":"31904","date":"1620201161505","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}

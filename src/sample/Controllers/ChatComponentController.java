@@ -3,8 +3,10 @@ package sample.Controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 public class ChatComponentController {
     @FXML
@@ -23,8 +25,10 @@ public class ChatComponentController {
 
     @FXML
     private MenuItem delete;
-
-
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Rectangle rectangle;
 
     public MenuItem getDelete(){
         return delete;
@@ -43,6 +47,7 @@ public class ChatComponentController {
         return name;
     }
 
+
     public Label getText() {
         return text;
     }
@@ -54,5 +59,22 @@ public class ChatComponentController {
     }
     public void setText(String str){
         text.setText(str);
+    }
+
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
+
+    public Rectangle getRectangle() {
+        return rectangle;
+    }
+
+    public void setRectangle(Rectangle rectangle) {
+        this.rectangle = rectangle;
     }
 }

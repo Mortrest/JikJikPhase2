@@ -1,12 +1,9 @@
 package sample.Controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import sample.Models.Tweets;
@@ -47,7 +44,7 @@ public class ExploreController {
 
 
     public void loadData() throws IOException {
-        new TweetLoad(grid, textArea,1,overlay).load();
+        new TweetLoad(grid, textArea,1,overlay,1).load();
     }
 
     public void closeOverlay(){
@@ -62,7 +59,5 @@ public class ExploreController {
             loadData();
         }
     }
-
-
 
 }

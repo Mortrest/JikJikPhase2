@@ -172,11 +172,10 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
-
          </children>
-
-
       </Pane>
+
+
    </children>
    <AnchorPane fx:id="editPage" layoutX="0" layoutY="0" prefHeight="666.0" prefWidth="858.0" visible="false">
       <fx:include source="editProfile.fxml" />

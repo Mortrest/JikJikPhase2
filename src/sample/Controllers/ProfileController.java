@@ -102,7 +102,7 @@ public class ProfileController {
     }
 
     public void loadData() throws IOException {
-        new TweetLoad(grid,textArea,2,overlay).load();
+        new TweetLoad(grid,textArea,2,overlay,1).load();
     }
 
     public void closeOverlay(){

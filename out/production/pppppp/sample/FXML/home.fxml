@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -9,6 +10,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -51,6 +53,17 @@
                                              <font>
                                                 <Font name="System Bold" size="13.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button layoutX="589.0" layoutY="98.0" mnemonicParsing="false" onAction="#attach" style="-fx-background-color: #f23a71;" text="Attach" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
                                           </Button>
                                        </children>
                                     </Pane>
@@ -72,7 +85,7 @@
                   </AnchorPane>
                </content>
             </ScrollPane>
-            <Pane fx:id="overlay" visible="false" layoutX="222.0" layoutY="96.0" prefHeight="307.0" prefWidth="418.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: BLACK;">
+            <Pane fx:id="overlay" layoutX="222.0" layoutY="96.0" prefHeight="307.0" prefWidth="418.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: BLACK;" visible="false">
                <children>
                   <Button layoutX="367.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeOverlay" prefHeight="25.0" prefWidth="29.0" style="-fx-background-color: #f23a71;" text="X" textFill="WHITE">
                      <font>
@@ -91,6 +104,47 @@
                   </Button>
                </children>
             </Pane>
+
+
+<!--            Azinja-->
+
+            <Pane fx:id="overlay1" layoutX="178.0" layoutY="73.0" prefHeight="402.0" prefWidth="541.0" style="-fx-background-color: #F9F9F9; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: BLACK;" visible="false">
+               <children>
+                  <Button fx:id="closeOverlay" layoutX="496.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeOverlay" style="-fx-background-radius: 10; -fx-background-color: #f23a71;" text="X" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="9.0" layoutY="71.0" prefHeight="317.0" prefWidth="516.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+                     <content>
+                        <AnchorPane style="-fx-background-color: #F9F9F9;">
+                           <children>
+                              <GridPane fx:id="overlayGrid">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="sendMsg" layoutX="51.0" layoutY="11.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="87.0" style="-fx-background-radius: 5; -fx-background-color: #f23a71;" text="SEND" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+
          </children>
       </Pane>
    </children>

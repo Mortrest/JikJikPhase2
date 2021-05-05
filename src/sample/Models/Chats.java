@@ -10,7 +10,7 @@ import java.util.Random;
 public class Chats {
     static LinkedList<Room> rooms;
     static LinkedList<Chat> chats;
-
+    static String image;
 
     static String roomID;
     static ModelLoader ml;
@@ -30,6 +30,14 @@ public class Chats {
             }
         }
         return null;
+    }
+
+    public static String getImage() {
+        return image;
+    }
+
+    public static void setImage(String image) {
+        Chats.image = image;
     }
 
     public static String getEditID() {
@@ -62,7 +70,7 @@ public class Chats {
         ml.save(chats,"Chats");
     }
 
-    public void createSavedMsg(String username) {
+    public static void createSavedMsg(String username) {
         Date date = new Date();
         Room room = new Room(Integer.toString(rooms.size() + 1), Long.toString(date.getTime()), username, username, 0, 0);
         rooms.add(room);
@@ -70,7 +78,7 @@ public class Chats {
         ml.save(rooms,"Rooms");
     }
 
-    public LinkedList<Room> userRoom(String username) {
+    public static LinkedList<Room> userRoom(String username) {
         LinkedList<Room> userRooms = new LinkedList<>();
         for (Room room : rooms) {
             if (room.getOwner1() != null) {
@@ -100,18 +108,20 @@ public class Chats {
     }
 
     // Searching rooms
-    public Room searchRoom(String o1, String o2) {
+    public static Room searchRoom(String o1, String o2) {
         for (Room room : rooms) {
-            if (room.getOwner1().equals(o1) && room.getOwner2().equals(o2)) {
-                return room;
-            } else if (room.getOwner2().equals(o1) && room.getOwner1().equals(o2)) {
-                return room;
+            if (room.getType().equals("pv")) {
+                if (room.getOwner1().equals(o1) && room.getOwner2().equals(o2)) {
+                    return room;
+                } else if (room.getOwner2().equals(o1) && room.getOwner1().equals(o2)) {
+                    return room;
+                }
             }
         }
         return null;
     }
 
-    public Room searchRoomID(String roomID) {
+    public static Room searchRoomID(String roomID) {
         for (Room room : rooms) {
             if (room.getRoomID().equals(roomID)) {
                 return room;
@@ -120,8 +130,33 @@ public class Chats {
         return null;
     }
 
-    // Making Comments
-    public void makeChat(String text, String owner, String roomID) {
+    public static String searchGroup(String groupName){
+        for (Room room : rooms){
+            if (room.getType().equals("gp")){
+                if (room.getGroupName().equals(groupName)){
+                    System.out.println(room.getRoomID());
+                    return room.getRoomID();
+                }
+            }
+        }
+        return null;
+    }
+
+    public static String searchMemberInGroup(String username){
+        for (Room room : rooms){
+            if (room.getType().equals("gp")){
+                for (String member : room.getMembers()){
+                    if (member.equals(username)){
+                        return room.getRoomID();
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+
+    public static void makeChat(String text, String owner, String roomID) {
         Date date = new Date();
         Random random = new Random();
         Chat chat = new Chat(Integer.toString(random.nextInt(100000)), roomID, text, Long.toString(date.getTime()), owner, false, false);
@@ -133,7 +168,23 @@ public class Chats {
         } catch (Exception e) {
             ml.log("Chats-" + "Cannot makeChat (makeChat method in Chats)");
         }
-        ml.log("Chats-" + "Tweet Created " + text);
+        ml.log("Chats-" + "Chat Created " + text);
+        ml.save(chats,"Chats");
+    }
+
+    public static void makeImageChat(String text, String owner, String roomID,String image) {
+        Date date = new Date();
+        Random random = new Random();
+        Chat chat = new Chat(Integer.toString(random.nextInt(100000)), roomID, text, Long.toString(date.getTime()), owner, false, false,image);
+        chats.add(chat);
+        try {
+            Room room = searchRoomID(roomID);
+            room.setUnread1(room.getUnread1() + 1);
+            room.setUnread2(room.getUnread2() + 1);
+        } catch (Exception e) {
+            ml.log("Chats-" + "Cannot makeChat (makeChat method in Chats)");
+        }
+        ml.log("Chats-" + "Chat Created " + text);
         ml.save(chats,"Chats");
     }
 

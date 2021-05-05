@@ -34,7 +34,8 @@
             <FontAwesomeIconView fx:id="like" fill="#7c7c7c" glyphName="HEART" layoutX="310.0" layoutY="130.0" onMouseClicked="#likeTweet" size="20" wrappingWidth="33.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></FontAwesomeIconView>
+               </cursor>
+            </FontAwesomeIconView>
             <FontAwesomeIconView fx:id="ret" fill="#51ace1" glyphName="RETWEET" layoutX="220.0" layoutY="130.0" size="20" wrappingWidth="26.785715103149414">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -45,11 +46,11 @@
                </cursor></FontAwesomeIconView>
             <FontAwesomeIconView fx:id="forward" fill="#7c7c7c" glyphName="SHARE" layoutX="423.0" layoutY="130.0" size="20">
                <cursor>
-                  <Cursor fx:constant="HAND" />
+                  <Cursor fx:constant="HAND"/>
                </cursor></FontAwesomeIconView>
             <FontAwesomeIconView fx:id="report" fill="#7a7a7a" glyphName="FLAG" layoutX="517.0" layoutY="130.0" size="20" wrappingWidth="33.0">
                <cursor>
-                  <Cursor fx:constant="HAND" />
+                  <Cursor fx:constant="HAND"/>
                </cursor></FontAwesomeIconView>
             <FontAwesomeIconView fx:id="block" fill="#e12929" glyphName="BAN" layoutX="615.0" layoutY="130.0" size="20">
                <cursor>
@@ -58,7 +59,8 @@
             <FontAwesomeIconView fx:id="mute" fill="#7c7c7c" glyphName="BELL" layoutX="710.0" layoutY="130.0" size="20" wrappingWidth="33.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></FontAwesomeIconView>
+               </cursor>
+            </FontAwesomeIconView>
             <Label fx:id="likeCount" layoutX="345.0" layoutY="109.0" prefHeight="29.0" prefWidth="39.0" text="23">
                <font>
                   <Font name="System Bold" size="15.0" />

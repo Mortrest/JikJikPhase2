@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -47,9 +48,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
+                  <FontAwesomeIconView fx:id="attach" fill="#94898f" glyphName="PAPERCLIP" layoutX="940.0" layoutY="45.0" onMouseClicked="#attach" size="37" wrappingWidth="28.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIconView>
                </children>
             </Pane>
-            <ScrollPane layoutX="15.0" layoutY="115.0" prefHeight="495.0" prefWidth="1080.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/focus.css">
+            <ScrollPane hbarPolicy="NEVER" layoutX="15.0" layoutY="115.0" prefHeight="495.0" prefWidth="1080.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/focus.css">
                <content>
                   <AnchorPane id="chatPane" fx:id="chatPane" maxWidth="200.0" prefHeight="392.0" prefWidth="100.0">
                      <children>

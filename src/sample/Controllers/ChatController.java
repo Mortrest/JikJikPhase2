@@ -7,15 +7,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import sample.Models.Chat;
-import sample.Models.Chats;
-import sample.Models.Room;
-import sample.Models.Users;
+import javafx.scene.paint.ImagePattern;
+import sample.Models.*;
+import sample.utils.ChangeProfilePicture;
 import sample.utils.ChangeScene;
-import sample.utils.LoadComponent;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 
@@ -44,16 +44,17 @@ public class ChatController {
     }
 
     public void addChat() throws IOException {
-        Users.getChats().makeChat(textArea.getText(), Users.getCurrentUser().getUsername(), Chats.getRoomID());
-        LoadComponent loadComponent = new LoadComponent("../FXML/chatComponent.fxml");
-        AnchorPane anchorPane = loadComponent.loadAnchor();
-        ChatComponentController item = loadComponent.loadFxml().getController();
-        item.setName(Users.getCurrentUser().getUsername());
-        item.setText(textArea.getText());
-//        item.getDelete().setOnAction(e -> delete());
+        if (Chats.getImage() != null) {
+            File file = new File(Chats.getImage());
+            Image image = new Image(file.toURI().toString());
+            Chats.makeImageChat(textArea.getText(), Users.getCurrentUser().getUsername(), Chats.getRoomID(), image.getUrl());
+        } else {
+            Chats.makeChat(textArea.getText(), Users.getCurrentUser().getUsername(), Chats.getRoomID());
+        }
         textArea.setText("");
-        ownChat(anchorPane, item);
-        GridPane.setMargin(anchorPane, new Insets(-15));
+        Chats.setImage(null);
+        grid.getChildren().clear();
+        loadData();
     }
 
     public void ownChat(AnchorPane anchorPane, ChatComponentController item) {
@@ -78,47 +79,68 @@ public class ChatController {
         grid.getChildren().clear();
         Room room = Users.getChats().searchRoomID(Chats.getRoomID());
         if (room != null) {
-//            if (room.getOwner1().equals(room.getOwner2())){
-//                fName.setText("Saved Messages");
-//            }
-//            else if (room.getOwner1().equals(Users.getCurrentUser().getUsername())) {
-//                fName.setText(room.getOwner2());
-//            } else {
-//                fName.setText(room.getOwner1());
-//            }
-//        }
+            if (room.getOwner1().equals(room.getOwner2())){
+                fName.setText("Saved Messages");
+            }
+            else if (room.getOwner1().equals(Users.getCurrentUser().getUsername())) {
+                fName.setText(room.getOwner2());
+            } else {
+                fName.setText(room.getOwner1());
+            }
         }
+
         LinkedList<Chat> tw = Users.getChats().showChats(Chats.getRoomID());
         for (int i = 0; i < tw.size(); i++) {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("../FXML/chatComponent.fxml"));
+            boolean c = false;
+            if (tw.get(i).getImage() == null) {
+                fxmlLoader.setLocation(getClass().getResource("../FXML/chatComponent.fxml"));
+            } else {
+                fxmlLoader.setLocation(getClass().getResource("../FXML/ChatImageComponent.fxml"));
+                c = true;
+            }
             AnchorPane anchorPane = fxmlLoader.load();
             ChatComponentController itemController = fxmlLoader.getController();
             itemController.setName(tw.get(i).getOwner());
-            itemController.setText(tw.get(i).getText());
-            int finalI = i;
-            itemController.getEdit().setOnAction(e -> {
-                try {
-                    edit(tw.get(finalI).getID());
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-            });
-            itemController.getDelete().setOnAction(e -> {
-                try {
-                    delete(tw.get(finalI).getID());
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-            });
-            if (tw.get(i).getOwner().equals(Users.getCurrentUser().getUsername())) {
-                ownChat(anchorPane, itemController);
-            } else {
-                grid.add(anchorPane, 1, grid.getRowCount() + 1);
-                grid.setLayoutX(-40);
-                grid.setLayoutY(20);
+            User user = Users.searchUsername(tw.get(i).getOwner());
+            if (user.getProfilePic() != null){
+                itemController.getCircle().setFill(new ImagePattern(new Image("/sample/images/ali.PNG")));
             }
-            GridPane.setMargin(anchorPane, new Insets(-15));
+            int finalI = i;
+            if (!c) {
+                itemController.setText(tw.get(i).getText());
+                itemController.getEdit().setOnAction(e -> {
+                    try {
+                        edit(tw.get(finalI).getID());
+                    } catch (IOException ioException) {
+                        ioException.printStackTrace();
+                    }
+                });
+                itemController.getDelete().setOnAction(e -> {
+                    try {
+                        delete(tw.get(finalI).getID());
+                    } catch (IOException ioException) {
+                        ioException.printStackTrace();
+                    }
+                });
+
+            } else {
+                Image image = new Image(tw.get(i).getImage());
+                itemController.getRectangle().setFill(new ImagePattern(image));
+
+            }
+//            if (tw.get(i).getOwner().equals(Users.getCurrentUser().getUsername())) {
+//                ownChat(anchorPane, itemController);
+//            } else {
+
+            grid.add(anchorPane, 1, grid.getRowCount() + 1);
+            grid.setLayoutX(-40);
+            grid.setLayoutY(20);
+            if (c) {
+                GridPane.setMargin(anchorPane, new Insets(-15,100,100,-15));
+            } else {
+                GridPane.setMargin(anchorPane, new Insets(-15));
+            }
         }
     }
 
@@ -139,6 +161,10 @@ public class ChatController {
         Chats.editChat(Chats.getEditID(), overlayText.getText());
         closeOverlay();
         loadData();
+    }
+
+    public void attach() throws IOException {
+        new ChangeProfilePicture(textArea, 2);
     }
 
     public void closeOverlay() {

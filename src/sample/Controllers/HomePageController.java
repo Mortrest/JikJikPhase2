@@ -1,26 +1,20 @@
 package sample.Controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
-import sample.Models.Tweet;
 import sample.Models.Tweets;
 import sample.Models.Users;
 import sample.utils.ChangeProfilePicture;
 import sample.utils.TweetLoad;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class HomePageController {
@@ -30,6 +24,10 @@ public class HomePageController {
     public Label nameLabel;
     @FXML
     public Circle proPic;
+    public Pane overlay1;
+    public GridPane overlayGrid;
+    @FXML
+    public Button sendMsg;
     @FXML
     private TextArea textArea, overlayText;
     @FXML
@@ -45,21 +43,11 @@ public class HomePageController {
     }
 
     public void addTweet() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
         if (Tweets.getImage() == null) {
-//            fxmlLoader.setLocation(getClass().getResource("../FXML/TweetComponent.fxml"));
-//            AnchorPane anchorPane = fxmlLoader.load();
-//            TweetComponentController itemController = fxmlLoader.getController();
-//            itemController.setTweetLabel(textArea.getText());
-//            itemController.setNameLabel("@" + Users.getCurrentUser().getUsername() + " - " + Users.getCurrentUser().getName());
             Tweets.makeTweet(textArea.getText(), "0", Users.getCurrentUser().getUsername(), Users.getCurrentUser().getFollowers());
-//            grid.add(anchorPane, 1, grid.getRowCount() + 1);
             grid.getChildren().clear();
             loadData();
-
-//            GridPane.setMargin(anchorPane, new Insets(10));
             textArea.setText("");
-
         } else {
             File file = new File(Tweets.getImage());
             Image image = new Image(file.toURI().toString());
@@ -71,16 +59,16 @@ public class HomePageController {
     }
 
     public void attach() throws IOException {
-        new ChangeProfilePicture(textArea);
+        new ChangeProfilePicture(textArea,1);
     }
 
-
     public void loadData() throws IOException {
-        new TweetLoad(grid, textArea, 3, overlay).load();
+        new TweetLoad(grid, textArea, 3, overlay,overlay1,overlayGrid,sendMsg,1).load();
     }
 
     public void closeOverlay() {
         overlay.setVisible(false);
+        overlay1.setVisible(false);
     }
 
     public void sendComment() throws IOException {
@@ -93,3 +81,5 @@ public class HomePageController {
 
 
 }
+
+

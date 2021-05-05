@@ -16,7 +16,7 @@ public class Tweets {
     static ModelLoader ml;
     static String image;
     static String tweetID;
-
+    static String forwardTweetID;
     public Tweets(ModelLoader modelLoader) {
         tweets = modelLoader.loadTweets();
         this.ml = modelLoader;
@@ -28,6 +28,14 @@ public class Tweets {
 
     public static void setImage(String image) {
         Tweets.image = image;
+    }
+
+    public static String getForwardTweetID() {
+        return forwardTweetID;
+    }
+
+    public static void setForwardTweetID(String forwardTweetID) {
+        Tweets.forwardTweetID = forwardTweetID;
     }
 
     public static String getComment() {

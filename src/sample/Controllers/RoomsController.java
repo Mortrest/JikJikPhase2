@@ -76,6 +76,8 @@ public class RoomsController {
     }
 
     public void loadData() throws IOException {
+        grid.getChildren().clear();
+        grid.setLayoutY(40);
         LinkedList<Room> tw = Users.getChats().userRoom(Users.getCurrentUser().getUsername());
         tw.addAll(groups);
         for (int i = 0; i < tw.size(); i++) {
@@ -112,6 +114,10 @@ public class RoomsController {
 //            GridPane.setMargin(anchorPane, new Insets(10));
         }
         loadFollowers();
+    }
+
+    public void refresh() throws IOException {
+        loadData();
     }
 
     LinkedList<String> members = new LinkedList<>();

@@ -2,11 +2,10 @@ package sample.utils;
 
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import sample.Models.Chats;
 import sample.Models.Tweets;
-import sample.Models.User;
 import sample.Models.Users;
 
 import java.io.File;
@@ -24,13 +23,17 @@ public class ChangeProfilePicture {
         Users.getCurrentUser().setProfilePic(file1.toString());
     }
 
-    public ChangeProfilePicture(TextArea idPane) throws IOException {
+    public ChangeProfilePicture(TextArea idPane, int type) throws IOException {
         FileChooser fileChooser = new FileChooser();
         Stage window = (Stage) idPane.getScene().getWindow();
         File file = fileChooser.showOpenDialog(window);
         Random random = new Random();
         File file1 = new File("C:\\Users\\ali80\\Desktop\\Tokyo\\Phase2\\src\\sample\\images\\" + random.nextInt(10000) + ".jpg");
         Files.copy(file.toPath(),file1.toPath());
-        Tweets.setImage(file1.toPath().toString());
+        if (type == 1) {
+            Tweets.setImage(file1.toPath().toString());
+        } else if (type == 2){
+            Chats.setImage(file1.toPath().toString());
+        }
     }
 }
