@@ -54,7 +54,13 @@ public class Tweets {
         Tweets.tweetID = tweetID;
     }
 
-
+    public static void reportUser(User user, String tweetID){
+        Tweet tweet = Tweets.search(tweetID);
+        int rep = tweet.getReported();
+        tweet.setReported(rep+1);
+        ml.save(tweets,"Tweets");
+        ml.log(tweetID + " Reported");
+    }
 
     public LinkedList<Tweet> getComments(String tweetID) {
         LinkedList<Tweet> comments = new LinkedList<>();
@@ -81,7 +87,7 @@ public class Tweets {
         Date date = new Date();
         LinkedList<String> str2 = new LinkedList<>();
         Random random = new Random();
-        Tweet tweet = new Tweet(Integer.toString(random.nextInt(100000)), text,parent, followers, Long.toString(date.getTime()), str2, owner, false,image);
+        Tweet tweet = new Tweet(Integer.toString(random.nextInt(100000)), text,parent, followers, Long.toString(date.getTime()), str2, owner, false,image,0);
         tweets.add(tweet);
         ml.log("Tweets-"+"Tweet Created " + text);
         ml.save(tweets,"Tweets");
@@ -92,7 +98,7 @@ public class Tweets {
         Date date = new Date();
         LinkedList<String> str2 = new LinkedList<>();
         Random random = new Random();
-        Tweet tweet = new Tweet(Integer.toString(random.nextInt(100000)), text,parent, followers, Long.toString(date.getTime()), str2, owner, false);
+        Tweet tweet = new Tweet(Integer.toString(random.nextInt(100000)), text,parent, followers, Long.toString(date.getTime()), str2, owner, false,0);
         tweets.add(tweet);
         ml.log("Tweets-"+"Tweet Created " + text);
         ml.save(tweets,"Tweets");
@@ -126,7 +132,7 @@ public class Tweets {
                     if (type == 2) {
                         if (t.getUsers() != null) {
                             for (String str : t.users) {
-                                if (str.equals(username) || t.getParent().equals("0")) {
+                                if (str.equals(username) && t.getParent().equals("0")) {
                                     if (!tw.contains(t)) {
                                         tw.add(t);
                                     }
@@ -160,7 +166,12 @@ public class Tweets {
     public static void reTweet(Tweet tweet, User user) {
         Date date = new Date();
         LinkedList<String> str2 = new LinkedList<>();
-        Tweet tw = new Tweet(Integer.toString(tweets.size() + 1), tweet.getText(),tweet.getParent(), user.getFollowers(), Long.toString(date.getTime()), str2, user.getUsername(), true);
+        Tweet tw;
+        if (tweet.getImage() == null) {
+            tw = new Tweet(Integer.toString(tweets.size() + 1), tweet.getText(), tweet.getParent(), user.getFollowers(), Long.toString(date.getTime()), str2, user.getUsername(), true, 0);
+        } else {
+            tw = new Tweet(Integer.toString(tweets.size() + 1), tweet.getText(), tweet.getParent(), user.getFollowers(), Long.toString(date.getTime()), str2, user.getUsername(), true,tweet.getImage(), 0);
+        }
         tweets.add(tw);
         ml.log("Tweets-"+user.getUsername() + " Retweeted Tweet ID " + tweet.getID());
         ml.save(tweets,"Tweets");

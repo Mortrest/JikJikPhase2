@@ -56,8 +56,8 @@ public class TweetLoad {
             tw = Users.getTweets().showTweetOwnPage(Users.class, Users.getCurrentUser().getUsername(), type);
         } else {
             tw = Users.getTweets().getComments(Tweets.getTweetID());
-            System.out.println("jesus christ");
         }
+
         for (int i = 1; i < tw.size() + 1; i++) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             if (tw.get(i - 1).getImage() == null) {
@@ -67,6 +67,7 @@ public class TweetLoad {
                 itemController.getProfilePic().setFill(new ImagePattern(new Image("/sample/images/iman.JPG")));
                 int finalI = i - 1;
                 itemController.setTweetID(tw.get(i - 1).getID());
+                itemController.loadData();
                 itemController.getLikeCount().setText(Integer.toString(tw.get(i - 1).getLikes().size()));
                 itemController.getRet().setOnMouseClicked(e -> {
                     try {
@@ -92,9 +93,14 @@ public class TweetLoad {
                     }
                 });
                 itemController.setNameLabel("@" + tw.get(i - 1).getOwner() + " - " + Users.searchUsername(tw.get(i - 1).getOwner()).getName());
-                itemController.setTweetLabel(tw.get(i - 1).getText());
+                String text = tw.get(i - 1).getText();
+                if (tw.get(i - 1).isRet()) {
+                    text = "[Retweeted] " + text;
+                }
+                itemController.setTweetLabel(text);
                 grid.add(anchorPane, 1, grid.getRowCount() + 1);
                 GridPane.setMargin(anchorPane, new Insets(10));
+
             } else {
                 fxmlLoader.setLocation(getClass().getResource("../FXML/TweetComponentImage.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
@@ -102,7 +108,17 @@ public class TweetLoad {
                 itemController.getProfilePic().setFill(new ImagePattern(new Image("/sample/images/iman.JPG")));
                 int finalI = i - 1;
                 itemController.setTweetID(tw.get(i - 1).getID());
+                itemController.loadData();
                 itemController.getLikeCount().setText(Integer.toString(tw.get(i - 1).getLikes().size()));
+                itemController.getForward().setOnMouseClicked(e -> {
+                    try {
+                        Tweets.setForwardTweetID(tw.get(finalI).getID());
+                        loadFlw();
+                    } catch (IOException ioException) {
+                        ioException.printStackTrace();
+                    }
+                });
+
                 itemController.getRet().setOnMouseClicked(e -> {
                     try {
                         retweet(tw.get(finalI).getID());
@@ -125,7 +141,6 @@ public class TweetLoad {
                 GridPane.setMargin(anchorPane, new Insets(10));
             }
         }
-
     }
 
     // Send Messages
@@ -135,8 +150,14 @@ public class TweetLoad {
             Room room1 = Chats.searchRoomID(Chats.searchGroup(user));
             if (room1 != null) {
                 Chats.makeChat(tweet.getText(), Users.getCurrentUser().getUsername(), room1.getRoomID());
+                if (tweet.getImage() != null) {
+                    Chats.makeImageChat(tweet.getText(), Users.getCurrentUser().getUsername(), room1.getRoomID(), tweet.getImage());
+                }
             } else {
                 Chats.makeChat(tweet.getText(), Users.getCurrentUser().getUsername(), user);
+                if (tweet.getImage() != null) {
+                    Chats.makeImageChat(tweet.getText(), Users.getCurrentUser().getUsername(), user, tweet.getImage());
+                }
             }
         }
         overlay1.setVisible(false);
@@ -189,14 +210,13 @@ public class TweetLoad {
 
     public void chooseFlwr(FollowerComponentController item, String str) {
         if (item.rect1.isVisible()) {
-            item.rect1.setVisible(false);
             members.remove(str);
+            item.rect1.setVisible(false);
         } else {
             item.rect1.setVisible(true);
             members.add(str);
         }
     }
-
 
     public void makeTweet(String ID) {
         overlay.setVisible(true);

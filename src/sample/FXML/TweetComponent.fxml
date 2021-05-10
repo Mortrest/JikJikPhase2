@@ -46,13 +46,13 @@
                </cursor></FontAwesomeIconView>
             <FontAwesomeIconView fx:id="forward" fill="#7c7c7c" glyphName="SHARE" layoutX="423.0" layoutY="130.0" size="20">
                <cursor>
-                  <Cursor fx:constant="HAND"/>
+                  <Cursor fx:constant="HAND" />
                </cursor></FontAwesomeIconView>
             <FontAwesomeIconView fx:id="report" fill="#7a7a7a" glyphName="FLAG" layoutX="517.0" layoutY="130.0" size="20" wrappingWidth="33.0">
                <cursor>
-                  <Cursor fx:constant="HAND"/>
+                  <Cursor fx:constant="HAND" />
                </cursor></FontAwesomeIconView>
-            <FontAwesomeIconView fx:id="block" fill="#e12929" glyphName="BAN" layoutX="615.0" layoutY="130.0" size="20">
+            <FontAwesomeIconView fx:id="block" fill="#7c7c7c" glyphName="BAN" layoutX="615.0" layoutY="130.0" size="20">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></FontAwesomeIconView>
@@ -71,6 +71,21 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
+            <FontAwesomeIconView fx:id="report1" fill="#e1bb14" glyphName="FLAG" layoutX="517.0" layoutY="130.0" size="20" visible="false" wrappingWidth="33.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="block1" fill="#e12929" glyphName="BAN" layoutX="615.0" layoutY="130.0" size="20" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="mute1" fill="#460be8" glyphName="BELL" layoutX="710.0" layoutY="130.0" size="20" visible="false" wrappingWidth="33.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
          </children>
       </Pane>
       <Pane fx:id="idPane" layoutX="12.0" layoutY="17.0" prefHeight="104.0" prefWidth="765.0">

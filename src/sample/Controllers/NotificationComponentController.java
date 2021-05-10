@@ -1,12 +1,14 @@
 package sample.Controllers;
 
         import javafx.fxml.FXML;
-        import javafx.scene.control.Button;
-        import javafx.scene.control.Label;
-        import javafx.scene.layout.Pane;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import sample.Models.Notif;
 
 public class NotificationComponentController {
 
+    Notif notif;
     @FXML
     private Pane TweetPane111;
 
@@ -17,10 +19,30 @@ public class NotificationComponentController {
     private Label text;
 
     @FXML
-    private Button accept;
+    private Button accept,mute;
 
     @FXML
     private Button decline;
+
+    public Notif getNotif() {
+        return notif;
+    }
+
+    public void setNotif(Notif notif) {
+        this.notif = notif;
+    }
+
+    public Button getAccept() {
+        return accept;
+    }
+
+    public Button getMute() {
+        return mute;
+    }
+
+    public Button getDecline() {
+        return decline;
+    }
 
     public void setName(String str){
         name.setText(str);
@@ -31,6 +53,7 @@ public class NotificationComponentController {
     public void hide(){
         accept.setVisible(false);
         decline.setVisible(false);
+        mute.setVisible(false);
     }
 
 }

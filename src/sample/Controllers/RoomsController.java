@@ -78,7 +78,7 @@ public class RoomsController {
     public void loadData() throws IOException {
         grid.getChildren().clear();
         grid.setLayoutY(40);
-        LinkedList<Room> tw = Users.getChats().userRoom(Users.getCurrentUser().getUsername());
+        LinkedList<Room> tw = Chats.userRoom(Users.getCurrentUser().getUsername());
         tw.addAll(groups);
         for (int i = 0; i < tw.size(); i++) {
             LoadComponent loadComponent = new LoadComponent("../FXML/roomProfileComponent.fxml");
@@ -104,7 +104,11 @@ public class RoomsController {
             }
             LinkedList<Chat> chat = Users.getChats().showChats(tw.get(i).getRoomID());
             if (chat.size() != 0){
-                itemController.setLastMsg(chat.get(chat.size()-1).getText());
+                if (chat.get(chat.size()-1).getImage() == null) {
+                    itemController.setLastMsg(chat.get(chat.size() - 1).getText());
+                } else {
+                    itemController.setLastMsg("Photo");
+                }
             } else {
                 itemController.setLastMsg("No Messages!");
             }

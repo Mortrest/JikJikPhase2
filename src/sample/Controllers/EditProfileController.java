@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -12,10 +11,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import sample.Models.User;
 import sample.Models.Users;
 import sample.utils.ChangeProfilePicture;
-import sample.utils.ChangeScene;
 
 import java.io.IOException;
 
@@ -55,9 +52,6 @@ public class EditProfileController {
         }
     }
 
-    public void categories(){
-        System.out.println("hello");
-    }
 
     public void changeBio() {
         Users.getCurrentUser().setInfo(bio.getText());
@@ -92,6 +86,14 @@ public class EditProfileController {
        new ChangeProfilePicture(bio);
        Image image = new Image(Users.getCurrentUser().getProfilePic());
        proPic.setFill(new ImagePattern(image));
+    }
+
+    public void categories() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(getClass().getResource("../FXML/categoriesPage.fxml"));
+        Stage window = (Stage) proPic.getScene().getWindow();
+        window.setScene(new Scene(root));
+
     }
 
     public void back() throws IOException {

@@ -1,7 +1,5 @@
-12:22:10 - ModelLoader-Tweets Loaded
-12:22:10 - ModelLoader-Notifs Loaded
-12:22:10 - ModelLoader-Rooms Loaded
-12:22:10 - ModelLoader-Chats Loaded
-12:22:10 - ModelLoader-Users Loaded
-12:22:41 - Tweets-Tweet Created Booooo!!!
-12:22:41 - ModelLoader saved
+9:31:49 - ModelLoader-Tweets Loaded
+9:31:49 - ModelLoader-Notifs Loaded
+9:31:49 - ModelLoader-Rooms Loaded
+9:31:49 - ModelLoader-Chats Loaded
+9:31:49 - ModelLoader-Users Loaded

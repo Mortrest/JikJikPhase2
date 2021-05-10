@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -25,6 +26,13 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <children>
+                  <FontAwesomeIconView fx:id="deleteSign" fill="#ff6161" glyphName="REMOVE" layoutX="400.0" layoutY="35.0" size="25" visible="false" wrappingWidth="25.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIconView>
+               </children>
             </Pane>
          </children>
          <opaqueInsets>

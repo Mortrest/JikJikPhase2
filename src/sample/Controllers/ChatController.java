@@ -77,8 +77,8 @@ public class ChatController {
 
     public void loadData() throws IOException {
         grid.getChildren().clear();
-        Room room = Users.getChats().searchRoomID(Chats.getRoomID());
-        if (room != null) {
+        Room room = Chats.searchRoomID(Chats.getRoomID());
+        if (room != null && room.getType().equals("pv")) {
             if (room.getOwner1().equals(room.getOwner2())){
                 fName.setText("Saved Messages");
             }

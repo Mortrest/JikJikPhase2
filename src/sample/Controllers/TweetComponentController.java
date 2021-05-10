@@ -5,15 +5,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import sample.Models.Tweet;
 import sample.Models.Tweets;
 import sample.Models.Users;
+
 import java.io.IOException;
 
 public class TweetComponentController {
     @FXML
     public FontAwesomeIconView like,liked;
     @FXML
-    public FontAwesomeIconView ret,comment,forward,report,block,mute;
+    public FontAwesomeIconView ret,comment,forward,report,block,mute,block1,mute1,report1;
 
     public Pane getIdPane() {
         return idPane;
@@ -97,7 +99,31 @@ public class TweetComponentController {
         Tweets.likeTweet(Users.getCurrentUser(),Tweets.search(TweetID));
     }
 
+
+
     public Circle getProfilePic() {
         return profilePic;
+    }
+
+
+    public void loadData(){
+        Tweet tweet = Tweets.search(TweetID);
+        block.setOnMouseClicked(e -> {
+            assert tweet != null;
+            Users.blockProfile(Users.getCurrentUser(),tweet.getOwner());
+            block1.setVisible(!block1.isVisible());
+
+        });
+        mute.setOnMouseClicked(e -> {
+            assert tweet != null;
+            Users.muteProfile(Users.getCurrentUser(),tweet.getOwner());
+            mute1.setVisible(!mute1.isVisible());
+
+        });
+        report.setOnMouseClicked(e -> {
+            Tweets.reportUser(Users.getCurrentUser(),TweetID);
+            System.out.println(report1.isVisible());
+            report1.setVisible(!report1.isVisible());
+                });
     }
 }

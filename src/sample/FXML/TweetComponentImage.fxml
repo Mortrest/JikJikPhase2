@@ -78,9 +78,30 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
+            <FontAwesomeIconView fx:id="report1" fill="#e1bb14" glyphName="FLAG" layoutX="517.0" layoutY="240.0" size="20" visible="false" wrappingWidth="33.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="block1" fill="#e12929" glyphName="BAN" layoutX="615.0" layoutY="240.0" size="20" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="mute1" fill="#460be8" glyphName="BELL" layoutX="710.0" layoutY="240.0" size="20" visible="false" wrappingWidth="33.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+
+
+
+
+
+
          </children>
       </Pane>
-      <Pane fx:id="idPane" layoutX="12.0" layoutY="17.0" prefHeight="247.0" prefWidth="765.0">
+      <Pane fx:id="idPane" layoutX="12.0" layoutY="17.0" prefHeight="209.0" prefWidth="765.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -93,7 +114,7 @@
          </children>
       </Pane>
       <Line endX="737.0" endY="141.85711669921875" layoutY="110.0" startX="715.0" startY="127.0" stroke="#757575" strokeWidth="2.0" />
-      <FontAwesomeIconView fx:id="liked" fill="#ff4f81" glyphName="HEART" layoutX="315.0" layoutY="139.0" onMouseClicked="#likeTweet" size="20" visible="false" wrappingWidth="33.0">
+      <FontAwesomeIconView fx:id="liked" fill="#ff4f81" glyphName="HEART" layoutX="315.0" layoutY="249.0" onMouseClicked="#likeTweet" size="20" visible="false" wrappingWidth="33.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

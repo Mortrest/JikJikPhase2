@@ -9,6 +9,7 @@ public class Tweet {
     private final String image;
     private final String date;
     String owner;
+    int reported;
     LinkedList<String> users;
 //    Date date;
     LinkedList<String> likes;
@@ -22,7 +23,7 @@ public class Tweet {
                 '}';
     }
 
-    public Tweet(String ID, String text,String parent, LinkedList<String > users, String date, LinkedList<String> likes, String owner,boolean isRet) {
+    public Tweet(String ID, String text,String parent, LinkedList<String > users, String date, LinkedList<String> likes, String owner,boolean isRet,int reported) {
         this.ID = ID;
         this.text = text;
         this.parent = parent;
@@ -32,9 +33,10 @@ public class Tweet {
         this.likes = likes;
         this.isRet = isRet;
         this.image = null;
+        this.reported = reported;
     }
 
-    public Tweet(String ID, String text,String parent, LinkedList<String > users, String date, LinkedList<String> likes, String owner,boolean isRet,String image) {
+    public Tweet(String ID, String text,String parent, LinkedList<String > users, String date, LinkedList<String> likes, String owner,boolean isRet,String image, int reported) {
         this.ID = ID;
         this.text = text;
         this.parent = parent;
@@ -44,6 +46,7 @@ public class Tweet {
         this.likes = likes;
         this.isRet = isRet;
         this.image = image;
+        this.reported = reported;
     }
 
     public String getParent() {
@@ -64,6 +67,14 @@ public class Tweet {
 
     public String getDate() {
         return date;
+    }
+
+    public int getReported() {
+        return reported;
+    }
+
+    public void setReported(int reported) {
+        this.reported = reported;
     }
 
     public boolean isRet() {

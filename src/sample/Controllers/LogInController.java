@@ -25,7 +25,7 @@ public class LogInController {
     @FXML
     private Label incorrect;
     @FXML
-    private Button signInBtn, btnT1;
+     Button signInBtn, btnT1;
 
 
     public void initialize() {

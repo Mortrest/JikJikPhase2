@@ -170,6 +170,10 @@ public class User {
         return phoneNumber;
     }
 
+    public void addCatg(LinkedList<String> cat){
+        categories.add(cat);
+    }
+
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }

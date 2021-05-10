@@ -1,15 +1,19 @@
-{"text":"How\u0027s today","ID":"48787","parent":"0","date":"1616602437718","owner":"morty","users":["jojo","jojo"],"likes":["morty"],"isRet":false}
-{"text":"Heeeey world","ID":"21731","parent":"0","date":"1616659033454","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
-{"text":"Dickam dahane iman","ID":"217312","parent":"0","date":"1616659033454","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
-{"text":"Khob ke chi?","ID":"71946","parent":"21731","date":"1616827205471","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
-{"text":"heh?","ID":"719462","parent":"71946","date":"1616827205471","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
-{"text":"Khosh behalet","ID":"65910","parent":"21731","date":"1616827218101","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
-{"text":"Hichi dawsh rahat bash","ID":"39368","parent":"71946","date":"1616827228491","owner":"morty","users":["jojo","jojo"],"likes":[],"isRet":false}
-{"text":"Heeeey world","ID":"9","parent":"0","date":"1619495907454","owner":"morty","users":["jojo","Mojo","gojo"],"likes":[],"isRet":true}
-{"text":"Dickam dahane iman","ID":"10","parent":"0","date":"1619496086479","owner":"morty","users":["jojo","Mojo","gojo"],"likes":[],"isRet":true}
-{"text":"joooooon","ID":"59282","parent":"217312","date":"1619500389573","owner":"morty","users":["jojo","Mojo","gojo"],"likes":[],"isRet":false}
-{"text":"awd","ID":"48536","parent":"0","image":"file:/C:/Users/ali80/Desktop/Tokyo/Phase2/src/sample/images/4399.jpg","date":"1619889984189","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
-{"text":"Mano Erfan","ID":"57652","parent":"0","image":"file:/C:/Users/ali80/Desktop/Tokyo/Phase2/src/sample/images/1465.jpg","date":"1619890089590","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
-{"text":"ggg","ID":"65359","parent":"0","date":"1619890178654","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
-{"text":"Che ruze zibayi bah bah","ID":"31904","parent":"48787","date":"1620199536408","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
-{"text":"Booooo!!!","ID":"64455","parent":"31904","date":"1620201161505","owner":"morty","users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"How\u0027s today","ID":"48787","parent":"0","date":"1616602437718","owner":"morty","reported":1,"users":["jojo","jojo"],"likes":["morty"],"isRet":false}
+{"text":"Heeeey world","ID":"21731","parent":"0","date":"1616659033454","owner":"morty","reported":0,"users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Dickam dahane iman","ID":"217312","parent":"0","date":"1616659033454","owner":"morty","reported":0,"users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Khob ke chi?","ID":"71946","parent":"21731","date":"1616827205471","owner":"morty","reported":0,"users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"heh?","ID":"719462","parent":"71946","date":"1616827205471","owner":"morty","reported":0,"users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Khosh behalet","ID":"65910","parent":"21731","date":"1616827218101","owner":"morty","reported":0,"users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Hichi dawsh rahat bash","ID":"39368","parent":"71946","date":"1616827228491","owner":"morty","reported":0,"users":["jojo","jojo"],"likes":[],"isRet":false}
+{"text":"Heeeey world","ID":"9","parent":"0","date":"1619495907454","owner":"morty","reported":0,"users":["jojo","Mojo","gojo"],"likes":[],"isRet":true}
+{"text":"Dickam dahane iman","ID":"10","parent":"0","date":"1619496086479","owner":"morty","reported":0,"users":["jojo","Mojo","gojo"],"likes":[],"isRet":true}
+{"text":"joooooon","ID":"59282","parent":"217312","date":"1619500389573","owner":"morty","reported":0,"users":["jojo","Mojo","gojo"],"likes":[],"isRet":false}
+{"text":"awd","ID":"48536","parent":"0","image":"file:/C:/Users/ali80/Desktop/Tokyo/Phase2/src/sample/images/4399.jpg","date":"1619889984189","owner":"morty","reported":5,"users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":["morty"],"isRet":false}
+{"text":"Mano Erfan","ID":"57652","parent":"0","image":"file:/C:/Users/ali80/Desktop/Tokyo/Phase2/src/sample/images/1465.jpg","date":"1619890089590","owner":"morty","reported":0,"users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"ggg","ID":"65359","parent":"0","date":"1619890178654","owner":"morty","reported":0,"users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"Che ruze zibayi bah bah","ID":"31904","parent":"48787","date":"1620199536408","owner":"morty","reported":0,"users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"Booooo!!!","ID":"64455","parent":"31904","date":"1620201161505","owner":"morty","reported":0,"users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"awd","ID":"16","parent":"0","date":"1620573414410","owner":"morty","reported":0,"users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":true}
+{"text":"Mano Erfan","ID":"17","parent":"0","image":"file:/C:/Users/ali80/Desktop/Tokyo/Phase2/src/sample/images/1465.jpg","date":"1620573555514","owner":"morty","reported":2,"users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":["morty"],"isRet":true}
+{"text":"joon baba","ID":"27096","parent":"17","date":"1620573908562","owner":"morty","reported":0,"users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
+{"text":"sd","ID":"39207","parent":"0","date":"1620574536690","owner":"morty","reported":0,"users":["jojo","Mojo","gojo","sojo","lojo","mojo","rojo"],"likes":[],"isRet":false}
